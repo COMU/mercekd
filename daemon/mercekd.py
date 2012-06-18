@@ -1,6 +1,7 @@
 
 import os
 import sys
+import logging
 
 #Options Bolumu
 
@@ -27,7 +28,45 @@ elif sys.argv[1]=="-v":
 else:
     print "Boyle bir secenek yok"
 
+#Dosya acma bolumu
+try:
+    f=open("/home/halil/mercekd/daemon/leases.txt",'r')
 
+
+except:
+    print  "This file does not exist\n"
+
+
+#tail bolumu
+def tail( f, window=20 ):
+    BUFSIZ = 1024
+    f.seek(0, 2)
+    bytes = f.tell()
+    size = window
+    block = -1
+    data = []
+    while size > 0 and bytes > 0:
+        if (bytes - BUFSIZ > 0):
+            # Seek back one whole BUFSIZ
+            f.seek(block*BUFSIZ, 2)
+            # read BUFFER
+            data.append(f.read(BUFSIZ))
+        else:
+            # file too small, start from begining
+            f.seek(0,0)
+            # only read what was not read
+            data.append(f.read(bytes))
+        linesFound = data[-1].count('\n')
+        size -= linesFound
+        bytes -= BUFSIZ
+        block -= 1
+    return '\n'.join(' '.join(data).splitlines()[-window:])
+
+tail_try=tail(f,window=10)
+find_1=tail_try.find("lease")
+find_2=tail_try.find("}",find_1)
+find_final=tail_try[find_1:find_2]
+print find_final
 
 
 
