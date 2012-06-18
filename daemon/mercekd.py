@@ -62,7 +62,7 @@ def tail( f, window=20 ):
         block -= 1
     return '\n'.join(' '.join(data).splitlines()[-window:])
 
-tail_try=tail(f,window=10)
+tail_try=tail(f,window=7)
 find_1=tail_try.find("lease")
 find_2=tail_try.find("}",find_1)
 find_final=tail_try[find_1:find_2]
