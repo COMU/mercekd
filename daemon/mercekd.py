@@ -62,30 +62,14 @@ def tail( f, window=20 ):
         block -= 1
     return '\n'.join(' '.join(data).splitlines()[-window:])
 
-tail_try=tail(f,window=7)
-find_1=tail_try.find("lease")
-find_2=tail_try.find("}",find_1)
-find_final=tail_try[find_1:find_2]
-print find_final
+while True:
+    try:
+        tail_try=tail(f,window=7)
+        find_1=tail_try.find("lease")
+        find_2=tail_try.find("}",find_1)
+        find_final=tail_try[find_1:find_2]
+        print find_final
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    except KeyboardInterrupt:
+        print "\nThere is an exception"
+        sys.exit(1)
