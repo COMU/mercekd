@@ -8,31 +8,43 @@ import logging
 from optparse import OptionParser
 import datetime
 
-
-#options
-program='mercekd'
-parser = OptionParser(usage='usage: %prog [options] filename')
-parser.add_option("-p", "--path",type="string",action="store",dest="path", metavar='filename')
-parser.add_option("-v","--verbose",dest="verbose")
-(option,args)=parser.parse_args()
-
-
-#logging
-log=logging.getLogger("mercekd")
-log.setLevel(logging.DEBUG)
-logger_console=logging.StreamHandler()
-logger_console.setLevel(logging.DEBUG)
-formatter=logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
-logger_console.setFormatter(formatter)
-log.addHandler(logger_console)
-
 #tail
 if __name__ == "__main__":
+
+    #logging
+    log=logging.getLogger("mercekd")
+    log.setLevel(logging.DEBUG)
+    logger_console=logging.StreamHandler()
+    logger_console.setLevel(logging.DEBUG)
+    formatter=logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+    logger_console.setFormatter(formatter)
+    log.addHandler(logger_console)
+
+
+    #options
+    program='mercekd'
+    parser = OptionParser(usage='usage: %prog [options] filename')
+    parser.add_option("-p", "--path",type="string",action="store",dest="path", metavar='filename')
+    parser.add_option("-v","--verbose",dest="verbose")
+    (option,args)=parser.parse_args()
+
+    if len(args)<1:
+        parser.print_help()
+        sys.exit(1)
+    if option.path:
+        file_name=option.path
+
+
+
+
+
+
+
     log.debug(datetime.datetime.now().isoformat(sep=" "))
     try:
         result=dict()
         flag = False
-        for line in tailer.follow(open('/home/halil/mercekd/daemon/leases.txt')):
+        for line in tailer.follow(open(file_name)):
             if line.startswith('lease'):
                 flag = True
 
@@ -44,8 +56,10 @@ if __name__ == "__main__":
                 continue
 
             if line.strip().startswith("}"):
-                log.setLevel(logging.INFO)
-                log.info("Record")
+
+                if option.verbose:
+                    log.setLevel(logging.INFO)
+                    log.info("Record")
                 flag = False
                 print "Record:", result
 
@@ -84,5 +98,6 @@ if __name__ == "__main__":
 
         #line.split('\n')
     except KeyboardInterrupt:
-        print "There is an exception"
+        log.setLevel(logging.WARNING)
+        log.warning('Program is over!')
         sys.exit(1)
