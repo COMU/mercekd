@@ -10,7 +10,6 @@ import datetime
 
 #tail
 if __name__ == "__main__":
-
     #logging
     log=logging.getLogger("mercekd")
     log.setLevel(logging.DEBUG)
@@ -20,56 +19,49 @@ if __name__ == "__main__":
     logger_console.setFormatter(formatter)
     log.addHandler(logger_console)
 
-
     #options
     program='mercekd'
-    parser = OptionParser(usage='usage: %prog [options] filename')
-    parser.add_option("-p", "--path",type="string",action="store",dest="path", metavar='filename')
-    parser.add_option("-v","--verbose",dest="verbose")
+    parser = OptionParser(usage='usage: %prog [options] filepath')
+    parser.add_option("-p", "--path",dest="path", metavar="path")
+    parser.add_option("-v","--verbose",dest="verbose",default=False)
     (option,args)=parser.parse_args()
 
-    if len(args)<1:
-        parser.print_help()
-        sys.exit(1)
+    file_name=None
+    verbose=False
     if option.path:
         file_name=option.path
-
-
-
-
-
+    if option.verbose:
+        verbose=True
+    if not option.verbose and not option.path:
+        parser.print_help()
+        sys.exit(1)
 
 
     log.debug(datetime.datetime.now().isoformat(sep=" "))
     try:
+      if file_name !=None:
         result=dict()
         flag = False
         for line in tailer.follow(open(file_name)):
             if line.startswith('lease'):
                 flag = True
-
                 lease=line.split()
-
                 ip=lease[1]
                 result['ip']=ip
-
                 continue
 
             if line.strip().startswith("}"):
-
                 if option.verbose:
                     log.setLevel(logging.INFO)
-                    log.info("Record")
+                    log.info("A new IP is given")
                 flag = False
-                print "Record:", result
-
+                print "IP=%s is matched that MAC=%s"%(ip,ethernet)
 
             if flag:
                 if line.strip().startswith('starts'):
                     li = line.strip().split()
                     start_time=" ".join(li[2:])
                     result['start_time']=start_time
-
                     continue
 
                 if line.strip().startswith('ends'):
