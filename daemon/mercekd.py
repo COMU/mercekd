@@ -2,11 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import tailer
-import os
 import sys
 import logging
 from optparse import OptionParser
-import datetime
 
 #tail
 if __name__ == "__main__":
@@ -23,11 +21,11 @@ if __name__ == "__main__":
     program='mercekd'
     parser = OptionParser(usage='usage: %prog [options] filepath')
     parser.add_option("-p", "--path",dest="path", metavar="path")
-    parser.add_option("-v","--verbose",dest="verbose",default=False)
+    parser.add_option("-v","--verbose",dest="verbose",action='store_true',default=False)
     (option,args)=parser.parse_args()
 
+
     file_name=None
-    verbose=False
     if option.path:
         file_name=option.path
     if option.verbose:
@@ -37,9 +35,9 @@ if __name__ == "__main__":
         sys.exit(1)
 
 
-    log.debug(datetime.datetime.now().isoformat(sep=" "))
+    log.info("mercekd started")
     try:
-      if file_name !=None:
+      if file_name:
         result=dict()
         flag = False
         for line in tailer.follow(open(file_name)):
@@ -51,41 +49,49 @@ if __name__ == "__main__":
                 continue
 
             if line.strip().startswith("}"):
-                if option.verbose:
-                    log.setLevel(logging.INFO)
-                    log.info("A new IP is given")
+                log.info("IP=%s MAC=%s" % (result['ip'], result['ethernet']))
                 flag = False
-                print "IP=%s is matched that MAC=%s"%(ip,ethernet)
 
             if flag:
                 if line.strip().startswith('starts'):
                     li = line.strip().split()
                     start_time=" ".join(li[2:])
                     result['start_time']=start_time
+                    if option.verbose:
+                        log.debug("Start time: %s" % (start_time))
                     continue
 
                 if line.strip().startswith('ends'):
                     li = line.strip().split()
                     end_time=" ".join(li[2:])
                     result['end_time']=end_time
+                    if option.verbose:
+                        log.debug("End time: %s" % (end_time))
                     continue
 
                 if line.strip().startswith('hardware'):
                     li = line.strip().split()
                     ethernet=li[2]
                     result['ethernet']=ethernet
+                    if option.verbose:
+                        log.debug("Ethernet: %s" % (ethernet))
+
                     continue
 
                 if line.strip().startswith('uid'):
                     li = line.strip().split()
                     uid=li[1]
                     result['uid']=uid
+                    if option.verbose:
+                        log.debug("UID: %s" % (uid))
                     continue
 
                 if line.strip().startswith('client-hostname'):
                     li = line.strip().split()
                     uname=li[1]
                     result['client-hostname']=uname
+                    if option.verbose:
+                        log.debug("Client-Hostname: %s" % (uname))
                     continue
 
         #line.split('\n')
