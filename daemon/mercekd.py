@@ -5,8 +5,10 @@ import tailer
 import sys
 import logging
 from optparse import OptionParser
+from sql.sql import SqlManager
 
 #tail
+
 if __name__ == "__main__":
     #logging
     log=logging.getLogger("mercekd")
@@ -20,7 +22,7 @@ if __name__ == "__main__":
     #options
     program='mercekd'
     parser = OptionParser(usage='usage: %prog [options] filepath')
-    parser.add_option("-p", "--path",dest="path", metavar="path")
+    parser.add_option("-p", "--path",dest="path",help="the path of DHCP lease file",metavar="path")
     parser.add_option("-v","--verbose",dest="verbose",action='store_true',default=False)
     (option,args)=parser.parse_args()
 
@@ -51,6 +53,9 @@ if __name__ == "__main__":
             if line.strip().startswith("}"):
                 log.info("IP=%s MAC=%s" % (result['ip'], result['ethernet']))
                 flag = False
+                #sql = SqlManager()
+                #sql.connect(_conn)
+                #sql.insert(result)
 
             if flag:
                 if line.strip().startswith('starts'):
