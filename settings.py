@@ -12,10 +12,12 @@ class ConfigClass:
         config.set("Sql Settings","passwd","")
         config.set("Sql Settings","database_name","mercekd_db")
 
-        config_path=os.path.abspath("settings.config")
-        config_file=open(config_path,'w')
-        config.write(config_file)
-        config_file.close()
+        def read_config(self,path):
+            settings_path = os.path.join(path, "settings.config")
+            config_file=open(settings_path,'w')
+            self.config.write(config_file)
+            config_file.close()
+
 
 if __name__=="__main__":
     config_class=ConfigClass()
