@@ -7,17 +7,12 @@ from optparse import OptionParser
 from sql.sql import SqlManager
 from datetime import datetime
 
-
 #tail
-
-
-
 if __name__ == "__main__":
     #logging
     log=logging.getLogger("mercekd")
     log.setLevel(logging.DEBUG)
     logger_console=logging.StreamHandler()
-    logger_console.setLevel(logging.DEBUG)
     formatter=logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
     logger_console.setFormatter(formatter)
     log.addHandler(logger_console)
@@ -41,6 +36,8 @@ if __name__ == "__main__":
 
 
     log.info("mercekd started")
+    sql = SqlManager()
+    sql.connect()
     try:
       if file_name:
         result=dict()
@@ -55,9 +52,8 @@ if __name__ == "__main__":
 
             if line.strip().startswith("}"):
                 log.info("IP=%s MAC=%s" % (result['ip'], result['ethernet']))
+                logger_console.flush()
                 flag = False
-                sql = SqlManager()
-                sql.connect()
                 sql.insert(result)
 
             if flag:
@@ -111,4 +107,5 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         log.setLevel(logging.WARNING)
         log.warning('Program is over!')
+        sql.close()
         sys.exit(1)
