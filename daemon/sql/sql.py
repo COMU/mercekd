@@ -54,6 +54,8 @@ class SqlManager:
             cursor=self.conn.cursor()
             cursor.execute(sql_query)
             self.conn.commit()
+            self.log_db.setLevel(logging.INFO)
+            self.log_db.info("A data is added in database")
             self.conn.close()
         except MySQLdb.DataError:
             log_db.setLevel(logging.ERROR)
