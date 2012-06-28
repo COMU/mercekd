@@ -17,6 +17,7 @@ class SqlManager:
         config_class.config_file=open(path+"/"+"setting.config",'r')
         config_class.config.readfp(config_class.config_file)
 
+
         self.log_db=logging.getLogger("mercekd_db")
         self.log_db.setLevel(logging.ERROR)
         self.logger_db_console=logging.StreamHandler()
@@ -29,6 +30,7 @@ class SqlManager:
             self.user_name=config_class.config.get("Sql Settings","user_name")
             self.passwd=config_class.config.get("Sql Settings","passwd")
             self.database_name=config_class.config.get("Sql Settings","database_name")
+            config_class.config_file.close()
 
         except ConfigParser.NoOptionError:
             self.log_db.error("No option exist this section")
@@ -56,7 +58,10 @@ class SqlManager:
             self.conn.commit()
             self.log_db.setLevel(logging.INFO)
             self.log_db.info("A data is added in database")
-            self.conn.close()
+
         except MySQLdb.DataError:
             log_db.setLevel(logging.ERROR)
             log_db.error("Data does not exist")
+
+    def close(self):
+        self.conn.close()
