@@ -1,13 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 import tailer
 import sys
 import logging
 from optparse import OptionParser
 from sql.sql import SqlManager
+from datetime import datetime
+
 
 #tail
+
+
 
 if __name__ == "__main__":
     #logging
@@ -53,9 +56,9 @@ if __name__ == "__main__":
             if line.strip().startswith("}"):
                 log.info("IP=%s MAC=%s" % (result['ip'], result['ethernet']))
                 flag = False
-                #sql = SqlManager()
-                #sql.connect(_conn)
-                #sql.insert(result)
+                sql = SqlManager()
+                sql.connect()
+                sql.insert(result)
 
             if flag:
                 if line.strip().startswith('starts'):
@@ -64,6 +67,9 @@ if __name__ == "__main__":
                     result['start_time']=start_time
                     if option.verbose:
                         log.debug("Start time: %s" % (start_time))
+
+                    time_format="%Y/%m/%d %H:%M:%S;"
+                    result['start_time']=datetime.strptime(start_time,time_format)
                     continue
 
                 if line.strip().startswith('ends'):
@@ -72,6 +78,9 @@ if __name__ == "__main__":
                     result['end_time']=end_time
                     if option.verbose:
                         log.debug("End time: %s" % (end_time))
+
+                    time_format="%Y/%m/%d %H:%M:%S;"
+                    result['end_time']=datetime.strptime(end_time,time_format)
                     continue
 
                 if line.strip().startswith('hardware'):
@@ -99,7 +108,6 @@ if __name__ == "__main__":
                         log.debug("Client-Hostname: %s" % (uname))
                     continue
 
-        #line.split('\n')
     except KeyboardInterrupt:
         log.setLevel(logging.WARNING)
         log.warning('Program is over!')
