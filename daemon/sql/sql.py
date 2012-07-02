@@ -3,7 +3,7 @@
 import logging
 import ConfigParser
 import MySQLdb
-from daemon.settings import ConfigClass
+from settings import ConfigClass
 import os
 
 class SqlManager:
