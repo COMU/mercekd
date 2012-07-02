@@ -43,8 +43,8 @@ class SqlManager:
             self.connectionState=1
         except MySQLdb.DatabaseError:
             self.connectionState=0
-            log_db.setLevel(logging.ERROR)
-            log_db.error("Error: Database Connection")
+            self.log_db.setLevel(logging.ERROR)
+            self.log_db.error("Error: Database Connection")
 
 
     def insert(self, result):
