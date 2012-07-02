@@ -7,6 +7,7 @@ from optparse import OptionParser
 from sql.sql import SqlManager
 from datetime import datetime
 
+
 #tail
 if __name__ == "__main__":
     #logging
