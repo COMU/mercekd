@@ -6,6 +6,7 @@ import logging
 from optparse import OptionParser
 from sql.sql import SqlManager
 from datetime import datetime
+import time
 
 
 #tail
@@ -35,6 +36,13 @@ if __name__ == "__main__":
         parser.print_help()
         sys.exit(1)
 
+    strptime = None
+    if hasattr(datetime, 'strptime'):
+            #python 2.6
+                strptime = datetime.strptime
+    else:
+            #python 2.4 equivalent
+                strptime = lambda date_string, format: datetime(*(time.strptime(date_string, format)[0:6]))
 
     log.info("mercekd started")
     sql = SqlManager()
@@ -66,7 +74,7 @@ if __name__ == "__main__":
                         log.debug("Start time: %s" % (start_time))
 
                     time_format="%Y/%m/%d %H:%M:%S;"
-                    result['start_time']=datetime.strptime(start_time,time_format)
+                    result['start_time']=strptime(start_time,time_format)
                     continue
 
                 if line.strip().startswith('ends'):
@@ -77,7 +85,7 @@ if __name__ == "__main__":
                         log.debug("End time: %s" % (end_time))
 
                     time_format="%Y/%m/%d %H:%M:%S;"
-                    result['end_time']=datetime.strptime(end_time,time_format)
+                    result['end_time']=strptime(end_time,time_format)
                     continue
 
                 if line.strip().startswith('hardware'):
