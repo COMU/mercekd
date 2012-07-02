@@ -5,7 +5,6 @@ import ConfigParser
 import MySQLdb
 from settings import ConfigClass
 import os
-#logging
 
 class SqlManager:
     def __init__(self):
