@@ -65,8 +65,8 @@ class SqlManager:
             self.log_db.info("A data is added in database")
 
         except MySQLdb.DataError:
-            log_db.setLevel(logging.ERROR)
-            log_db.error("Data does not exist")
+            self.log_db.setLevel(logging.ERROR)
+            self.log_db.error("Data does not exist")
 
     def close(self):
         self.conn.close()
