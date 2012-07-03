@@ -90,7 +90,7 @@ if __name__ == "__main__":
 
                 if line.strip().startswith('hardware'):
                     li = line.strip().split()
-                    ethernet=li[2]
+                    ethernet=li[2].strip(";")
                     result['ethernet']=ethernet
                     if option.verbose:
                         log.debug("Ethernet: %s" % (ethernet))
@@ -99,7 +99,7 @@ if __name__ == "__main__":
 
                 if line.strip().startswith('uid'):
                     li = line.strip().split()
-                    uid=li[1]
+                    uid=str(li[1].strip(";"))
                     result['uid']=uid
                     if option.verbose:
                         log.debug("UID: %s" % (uid))
@@ -107,7 +107,7 @@ if __name__ == "__main__":
 
                 if line.strip().startswith('client-hostname'):
                     li = line.strip().split()
-                    uname=li[1]
+                    uname=str(li[1].strip(";"))
                     result['client-hostname']=uname
                     if option.verbose:
                         log.debug("Client-Hostname: %s" % (uname))
