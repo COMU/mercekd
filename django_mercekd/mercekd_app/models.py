@@ -1,6 +1,6 @@
 from django.db import models
 
-class lease_db:
+class lease_db(models.Model):
     id=models.AutoField(primary_key=True)
     ip=models.IPAddressField(blank=False)
     mac=models.CharField(max_length=20,blank=False)
