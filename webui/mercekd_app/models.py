@@ -1,5 +1,4 @@
 from django.db import models
-
 class lease_db(models.Model):
     ip=models.IPAddressField(blank=False)
     mac=models.CharField(max_length=20,blank=False)
