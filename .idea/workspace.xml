@@ -1,0 +1,840 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="dbc5472a-66eb-4bb6-ac27-a0e8971c84b1" name="Default" comment="base.html yapısı oluşturuldu">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webui/webui/media/bootstrap/img/glyphicons-halflings-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webui/webui/media/bootstrap/img/glyphicons-halflings.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/daemon/leases.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webui/manage.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webui/mercekd_app/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webui/mercekd_app/tests.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webui/mercekd_app/views.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webui/webui/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webui/webui/media/bootstrap/css/bootstrap-responsive.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webui/webui/media/bootstrap/css/bootstrap-responsive.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webui/webui/media/bootstrap/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webui/webui/media/bootstrap/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webui/webui/media/bootstrap/js/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webui/webui/media/bootstrap/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webui/webui/settings.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webui/webui/templates/base.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webui/webui/urls.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webui/webui/wsgi.py" />
+    </list>
+    <list id="aeb23542-9e24-4fe8-a283-7aa384b74a36" name="Rejected commit: Default" comment="dizin yolu değiştirildi.">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_mercekd/django_mercekd/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_mercekd/django_mercekd/settings.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_mercekd/django_mercekd/urls.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_mercekd/django_mercekd/wsgi.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_mercekd/mercekd_app/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_mercekd/mercekd_app/models.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_mercekd/mercekd_app/tests.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_mercekd/mercekd_app/views.py" afterPath="" />
+    </list>
+    <ignored path="mercekd.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="mercekd" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webui/webui/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="1" selection-start="144" selection-end="144" vertical-scroll-proportion="0.30612245">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Push.Settings">
+    <option name="myUpdateMethod" value="REBASE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/language/translation.py" />
+        <option value="$PROJECT_DIR$/daemon/mercekd.py" />
+        <option value="$PROJECT_DIR$/daemon/sql/sql.py" />
+        <option value="$PROJECT_DIR$/daemon/insert.py" />
+        <option value="$PROJECT_DIR$/daemon/sql/deneme_django.py" />
+        <option value="$USER_HOME$/denemeproj/denemeproj/testapp/views.py" />
+        <option value="$PROJECT_DIR$/django_mercekd/mercekd_app/views.py" />
+        <option value="$PROJECT_DIR$/webui/django_mercekd/Templates/main/base.html" />
+        <option value="$PROJECT_DIR$/webui/django_mercekd/urls.py" />
+        <option value="$PROJECT_DIR$/webui/mercekd_app/views.py" />
+        <option value="$USER_HOME$/deneme/test.py" />
+        <option value="$PROJECT_DIR$/webui/django_mercekd/templates/main/base.html" />
+        <option value="$PROJECT_DIR$/webui/django_mercekd/settings.py" />
+        <option value="$PROJECT_DIR$/webui/mercekd_app/models.py" />
+        <option value="$PROJECT_DIR$/webui/settings.py" />
+        <option value="$PROJECT_DIR$/webui/webui/settings.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-3" />
+    <option name="y" value="-3" />
+    <option name="width" value="1372" />
+    <option name="height" value="740" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mercekd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mercekd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mercekd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mercekd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mercekd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mercekd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mercekd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mercekd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mercekd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="77" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="93" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="82" />
+    <property name="options.lastSelected" value="settings.github" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="last_opened_file_path" value="$USER_HOME$/deneme" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="99" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1008" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1006" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="97" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="92" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <PyConsoleSettings />
+    </option>
+    <option name="myDjangoConsoleState">
+      <PyConsoleSettings />
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webui" />
+      <recent name="$PROJECT_DIR$/daemon/sql" />
+      <recent name="$PROJECT_DIR$/daemon" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.settings">
+    <configuration default="false" name="insert" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/daemon" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <module name="mercekd" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/daemon/insert.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="MULTIPROCESS" value="false" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="translation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/language" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <module name="mercekd" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/language/translation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="MULTIPROCESS" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Doctests in /home/halil/mercekd" type="tests" factoryName="Doctests" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <module name="mercekd" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="$PROJECT_DIR$" />
+      <option name="TEST_TYPE" value="TEST_FOLDER" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="views" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/denemeproj/denemeproj/testapp" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="mercekd" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/denemeproj/denemeproj/testapp/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="MULTIPROCESS" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="settings" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/webui/webui" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <module name="mercekd" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/webui/webui/settings.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="MULTIPROCESS" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="mercekd" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="MULTIPROCESS" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="mercekd" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="mercekd" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="sql" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/daemon/sql" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <module name="mercekd" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/daemon/sql/sql.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="MULTIPROCESS" value="false" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="mercekd" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/daemon" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <module name="mercekd" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/daemon/mercekd.py" />
+      <option name="PARAMETERS" value="-p /home/halil/mercekd/daemon/leases.txt" />
+      <option name="MULTIPROCESS" value="false" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/deneme" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="mercekd" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/deneme/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="MULTIPROCESS" value="false" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="base.html" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" value="file://$PROJECT_DIR$/webui/django_mercekd/Templates/main/base.html" />
+      </JSDebuggerConfigurationSettings>
+      <method />
+    </configuration>
+    <list size="9">
+      <item index="0" class="java.lang.String" itemvalue="Python.sql" />
+      <item index="1" class="java.lang.String" itemvalue="Python.mercekd" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test" />
+      <item index="3" class="java.lang.String" itemvalue="Python.insert" />
+      <item index="4" class="java.lang.String" itemvalue="Python.translation" />
+      <item index="5" class="java.lang.String" itemvalue="Python's test.Doctests in /home/halil/mercekd" />
+      <item index="6" class="java.lang.String" itemvalue="Python.views" />
+      <item index="7" class="java.lang.String" itemvalue="JavaScript Debug.base.html" />
+      <item index="8" class="java.lang.String" itemvalue="Python.settings" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dbc5472a-66eb-4bb6-ac27-a0e8971c84b1" name="Default" comment="" />
+      <changelist id="aeb23542-9e24-4fe8-a283-7aa384b74a36" name="Rejected commit: Default" comment="dizin düzeltildi" />
+      <created>1340693694009</created>
+      <updated>1340693694009</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Config dosyası oluşturuldu.&#10;fixes #6">
+      <created>1340716457610</created>
+      <updated>1340716457610</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Sql bağlantı ayarları ve &quot;insert&quot; sorgusu eklendi">
+      <created>1340716934901</created>
+      <updated>1340716934901</updated>
+    </task>
+    <task id="LOCAL-00003" summary="-p'nin karşısına lease dosyasının yolunun yazılması kısmı bitti&#10; fixes #5">
+      <created>1340717615977</created>
+      <updated>1340717615977</updated>
+    </task>
+    <task id="LOCAL-00004" summary="os.path.abspath() kullanıldı">
+      <created>1340800237666</created>
+      <updated>1340800237666</updated>
+    </task>
+    <task id="LOCAL-00005" summary="read_config fonksiyonu eklendi">
+      <created>1340806065796</created>
+      <updated>1340806065796</updated>
+    </task>
+    <task id="LOCAL-00006" summary="settings.py düzenli hale getirildi.">
+      <created>1340871336365</created>
+      <updated>1340871336365</updated>
+    </task>
+    <task id="LOCAL-00007" summary="&quot;logging&quot; kısmı düzeltildi.">
+      <created>1340872097893</created>
+      <updated>1340872097893</updated>
+    </task>
+    <task id="LOCAL-00008" summary="date_time sorunu çözüldü">
+      <created>1340890447181</created>
+      <updated>1340890447181</updated>
+    </task>
+    <task id="LOCAL-00009" summary="path sorunu ve settings.config sorunu çözüldü">
+      <created>1340890635950</created>
+      <updated>1340890635950</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Sql sorgusu ve log mesajı düzeltildi">
+      <created>1340894029911</created>
+      <updated>1340894029911</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Veri tabanına kayıt eklenince log mesajı gelmesi eklendi">
+      <created>1340894533098</created>
+      <updated>1340894533098</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Sql bağlantı ayarları değiştirildi.">
+      <created>1340895180767</created>
+      <updated>1340895180767</updated>
+    </task>
+    <task id="LOCAL-00013" summary="setting.config /mercekd/daemon klasöründe olduğu varsayıldı ve ayarlar  için bu dosyada değişiklik yapmak gerekiyor">
+      <created>1340895975219</created>
+      <updated>1340895975219</updated>
+    </task>
+    <task id="LOCAL-00014" summary="setting.config ayarları bu dosyada da düzeltildi.">
+      <created>1340896010214</created>
+      <updated>1340896010214</updated>
+    </task>
+    <task id="LOCAL-00015" summary="sql dizininin modül olarak algılanması için eksik olan dosya oluşturuldu.">
+      <created>1340896072328</created>
+      <updated>1340896072328</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Sorgular düzeltildi">
+      <created>1340964612895</created>
+      <updated>1340964612895</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Kurulum için gerekli olanlar bilgisi eklendi.">
+      <created>1340967026119</created>
+      <updated>1340967026119</updated>
+    </task>
+    <task id="LOCAL-00018" summary="SQL yapısı eklendi">
+      <created>1341211773351</created>
+      <updated>1341211773351</updated>
+    </task>
+    <task id="LOCAL-00019" summary="setting.config oluşturuldu">
+      <created>1341212091625</created>
+      <updated>1341212091625</updated>
+    </task>
+    <task id="LOCAL-00020" summary="settings.py dizini değiştirildi">
+      <created>1341219050892</created>
+      <updated>1341219050892</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Sorgular düzeltildi">
+      <created>1341219435675</created>
+      <updated>1341219435675</updated>
+    </task>
+    <task id="LOCAL-00022" summary="dizin düzeltildi">
+      <created>1341219676911</created>
+      <updated>1341219676911</updated>
+    </task>
+    <task id="LOCAL-00023" summary="dizin düzeltildi">
+      <created>1341219747919</created>
+      <updated>1341219747919</updated>
+    </task>
+    <task id="LOCAL-00024" summary="dizin düzeltildi">
+      <created>1341223816387</created>
+      <updated>1341223816387</updated>
+    </task>
+    <task id="LOCAL-00025" summary="dizin yolu değiştirildi.">
+      <created>1341225720575</created>
+      <updated>1341225720575</updated>
+    </task>
+    <task id="LOCAL-00026" summary="sorgular düzeltildi">
+      <created>1341297307493</created>
+      <updated>1341297307493</updated>
+    </task>
+    <task id="LOCAL-00027" summary="sorgular düzeltildi">
+      <created>1341297843058</created>
+      <updated>1341297843058</updated>
+    </task>
+    <task id="LOCAL-00028" summary="; ler kaldırıldı&#10;fixes #7&#10;">
+      <created>1341299771305</created>
+      <updated>1341299771305</updated>
+    </task>
+    <task id="LOCAL-00029" summary="'uid' ve 'client-hostname' kayıttan sonra sıfırlandı.">
+      <created>1341476068575</created>
+      <updated>1341476068575</updated>
+    </task>
+    <task id="LOCAL-00030" summary="model.py oluşturuldu&#10;fixes #15">
+      <created>1341699588118</created>
+      <updated>1341699588118</updated>
+    </task>
+    <task id="LOCAL-00031" summary="django yapısı eklendi">
+      <created>1341700586174</created>
+      <updated>1341700586174</updated>
+    </task>
+    <task id="LOCAL-00032" summary="class yapısı düzeltdildi">
+      <created>1341731961497</created>
+      <updated>1341731961497</updated>
+    </task>
+    <task id="LOCAL-00033" summary="class yapısı düzeltdildi&#10;fixes #17">
+      <created>1341820331615</created>
+      <updated>1341820331615</updated>
+    </task>
+    <task id="LOCAL-00034" summary="base.html yapısı oluşturuldu">
+      <created>1341835191674</created>
+      <updated>1341835191674</updated>
+    </task>
+    <task id="LOCAL-00035" summary="settings.py'den çağrılan yol çalışmıyor">
+      <created>1341863685812</created>
+      <updated>1341863685812</updated>
+    </task>
+    <task id="LOCAL-00036" summary="settings.py düzeltildi">
+      <created>1341863710113</created>
+      <updated>1341863710113</updated>
+    </task>
+    <task id="LOCAL-00037" summary="dizin düzeltildi ama sorun çözülemedi">
+      <created>1341904510356</created>
+      <updated>1341904510356</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-3" y="-3" width="1372" height="740" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16582064" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" sideWeight="0.4969697" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17121212" sideWeight="0.7072758" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20304568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2927242" sideWeight="0.5068182" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2927242" sideWeight="0.4878788" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" sideWeight="0.4969697" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" sideWeight="0.4969697" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="ENABLE_BACKGROUND_PROCESSES" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="dizin düzeltildi ama sorun çözülemedi" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="path sorunu ve settings.config sorunu çözüldü" />
+    <MESSAGE value="Sql sorgusu ve log mesajı düzeltildi" />
+    <MESSAGE value="Veri tabanına kayıt eklenince log mesajı gelmesi eklendi" />
+    <MESSAGE value="Sql bağlantı ayarları değiştirildi." />
+    <MESSAGE value="setting.config /mercekd/daemon klasöründe olduğu varsayıldı ve ayarlar  için bu dosyada değişiklik yapmak gerekiyor" />
+    <MESSAGE value="setting.config ayarları bu dosyada da düzeltildi." />
+    <MESSAGE value="sql dizininin modül olarak algılanması için eksik olan dosya oluşturuldu." />
+    <MESSAGE value="Kurulum için gerekli olanlar bilgisi eklendi." />
+    <MESSAGE value="SQL yapısı eklendi" />
+    <MESSAGE value="setting.config oluşturuldu" />
+    <MESSAGE value="settings.py dizini değiştirildi" />
+    <MESSAGE value="Sorgular düzeltildi" />
+    <MESSAGE value="dizin düzeltildi" />
+    <MESSAGE value="dizin yolu değiştirildi." />
+    <MESSAGE value="sorgular düzeltildi" />
+    <MESSAGE value="; ler kaldırıldı&#10;fixes #7&#10;" />
+    <MESSAGE value="'uid' ve 'client-hostname' kayıttan sonra sıfırlandı." />
+    <MESSAGE value="model.py oluşturuldu&#10;fixes #15" />
+    <MESSAGE value="django yapısı eklendi" />
+    <MESSAGE value="class yapısı düzeltdildi" />
+    <MESSAGE value="class yapısı düzeltdildi&#10;fixes #17" />
+    <MESSAGE value="base.html yapısı oluşturuldu" />
+    <MESSAGE value="settings.py'den çağrılan yol çalışmıyor" />
+    <MESSAGE value="settings.py düzeltildi" />
+    <MESSAGE value="dizin düzeltildi ama sorun çözülemedi" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$USER_HOME$/Masaüstü/MySQLVeritabani.py</url>
+          <line>2</line>
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file:///usr/lib/python2.7/dist-packages/MySQLdb/connections.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="1070" selection-end="1070" vertical-scroll-proportion="0.33161953" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/django/shortcuts/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="362" selection-end="362" vertical-scroll-proportion="0.33333334" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daemon/sql/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="30" selection-start="759" selection-end="759" vertical-scroll-proportion="0.5575221" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daemon/insert.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="154" column="0" selection-start="6032" selection-end="6032" vertical-scroll-proportion="0.49557522" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daemon/sql/sql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="0" selection-start="3519" selection-end="3519" vertical-scroll-proportion="0.8369565" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daemon/mercekd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="68" selection-start="2404" selection-end="2404" vertical-scroll-proportion="0.75396824" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/deneme/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="9" selection-start="9" selection-end="9" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webui/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="248" selection-end="248" vertical-scroll-proportion="0.35714287">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webui/webui/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webui/webui/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="1" selection-start="144" selection-end="144" vertical-scroll-proportion="0.30612245">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+
