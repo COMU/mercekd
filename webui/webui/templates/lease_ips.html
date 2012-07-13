@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="span12">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>IPs</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for ip in ips %}
+            <tr>
+
+                <td>
+                    {{ ip.ip }}
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+{% endblock %}
