@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row">
+    <div class="span12">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Subnet</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for subnet in subnets %}
+            <tr>
+
+                <td>
+                    <a href="{% url display_subnet_view subnet %}"> {{ subnet }}.x/24 </a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+     </div>
+
+    </div>
+
+{% endblock %}
