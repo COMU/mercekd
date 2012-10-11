@@ -53,9 +53,16 @@ if __name__ == "__main__":
         flag = False
         for line in tailer.follow(open(file_name)):
             if line.startswith('lease'):
+              try:
                 flag = True
                 lease=line.split()
                 ip=lease[1]
+                result['ip']=ip
+                continue
+              except:
+                print "Unexpected error:", sys.exc_info()[0]
+                raise
+                ip=""
                 result['ip']=ip
                 continue
 
