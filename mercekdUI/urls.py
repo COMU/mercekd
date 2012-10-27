@@ -5,6 +5,7 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^$', 'mercekdUI.main.views.home', name='homePage'),
     # Examples:
     # url(r'^$', 'mercekdUI.views.home', name='home'),
     # url(r'^mercekdUI/', include('mercekdUI.foo.urls')),
