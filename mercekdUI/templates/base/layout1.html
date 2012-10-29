@@ -1,5 +1,19 @@
 {% extends "base/base.html" %}
 
-      	{% block content %}
-      	{% block left %}  {% endblock %}
-	 {% endblock %}
+        {% block navigation %}
+           <div class="span2">
+		<ul class="nav nav-main">
+			<li><a href="#typography"><i class="icon-home"></i> Homepage</a></li>
+			<li><a href="#code"><i class="icon-leaf"></i> List Active Leases ()</a></li>
+			<li><a href="#tables"><i class="icon-fire"></i> List Expired Leases ()</a></li>
+			<li><a href="#forms"><i class="icon-filter"></i> Advanced Search</a></li>
+			<li><a href="#buttons"><i class="icon-wrench"></i> Options</a></li>
+			<li><a href="#buttons"><i class="icon-off"></i> Logout</a></li>
+		</ul>
+           </div>
+        {% endblock %}
+        {% block content %}
+      <div class="span9">
+       	{% block left %}  {% endblock %}
+      </div>
+        {% endblock %}
