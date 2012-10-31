@@ -1,14 +1,17 @@
 from django.conf.urls.defaults import patterns, include, url
 from django.conf import settings
-
+from django.views.generic import ListView, DetailView
+from mercekdUI.main.models import Lease
 
 
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
-
+leases_list = ListView.as_view(model=Lease)
 urlpatterns = patterns('',
+   # url(r'^$', leases_list, name='leases_list'),
+    
     url(r'^$', 'mercekdUI.main.views.home', name='homePage'),
     # Examples:
     # url(r'^$', 'mercekdUI.views.home', name='home'),

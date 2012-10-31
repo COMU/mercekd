@@ -1,5 +1,49 @@
 {% extends "base/layout1.html" %}
 
 {% block left %}
-  <h2> Welcome </h2>
+  <h1>Lease Overview</h1>
+  <br>
+  <table class="table table-striped">
+     <thead>
+                <tr>
+                  <th>UID</th>
+                  <th>IP</th>
+                  <th>Mac</th>
+                  <th>Client-Name</th>
+                  <th>Starts</th>
+                  <th>End</th>
+                </tr>
+     </thead>
+     <tbody>
+     {% for lease in leases_list.object_list %}
+                <tr>
+                  <td>{{ lease.uid }}</td>
+                  <td>{{ lease.ip }}</td>
+                  <td>{{ lease.mac }}</td>
+                  <td>{{ lease.client }} </td>
+                  <td>{{ lease.starts }} </td>
+                  <td>{{ lease.ends }} </td>
+                </tr>     
+     {% endfor %}
+     </tbody>  
+  </table>   
+
+<div class="pagination">
+    <span class="step-links">
+        {% if leases_list.has_previous %}
+            <a href="?page={{ leases_list.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ leases_list.number }} of {{ leases_list.paginator.num_pages }}.
+        </span>
+
+        {% if leases_list.has_next %}
+            <a href="?page={{ leases_list.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+
 {% endblock %}
+
+
