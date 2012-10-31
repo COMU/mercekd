@@ -8,6 +8,7 @@ build
 eggs
 downloads
 parts
+src
 bin
 var
 sdist
