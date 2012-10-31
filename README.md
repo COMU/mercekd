@@ -11,6 +11,7 @@ installation
     $ git checkout develop
     $ python bootstrap.py
     $ ./bin/buildout
-    $ ./bin/django
+    $ ./bin/django runserver
     $ ./bin/start_master.sh
-    $ 
+    $ ./bin/mongoimport --db leases --collection leases --file /db/leases.json
+    
