@@ -6,6 +6,7 @@ from mercekdUI.main.models import Lease
 from mercekdUI.main.utils import *
 import random
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+import datetime
 
 def home(request):
 
@@ -22,7 +23,8 @@ def home(request):
         ## End ##
         lease_list = Lease.objects.all()
         paginator = Paginator(lease_list, 25)
-        
+        active_leases_count = len(parseLease(lease_list))
+        total_leases_count = len(lease_list)
         if request.GET.get('page'):
           page = request.GET.get('page')
         else:
@@ -36,7 +38,9 @@ def home(request):
 
         context = {
            'page_title': 'Homepage',
-           'leases_list': leases_list
+           'leases_list': leases_list,
+           'active_leases_count': active_leases_count, #todo - still not quite fast, need to rewrite.
+           'expired_leases_count': total_leases_count - active_leases_count,
         }
 	return render_to_response("home/home.html",
                             context_instance=RequestContext(request, context))

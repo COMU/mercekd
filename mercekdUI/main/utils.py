@@ -1,5 +1,5 @@
 from random import randint
-import random, time, string
+import random, time, string, datetime
 
 def randIP():
     a = randint(1,254)
@@ -30,4 +30,11 @@ def randDate(start, end, prop):
 
 def randName(size=randint(1,10), chars=string.ascii_uppercase):
    return ''.join(random.choice(chars) for x in range(size))
-   
+
+def parseLease(leases_list):
+    parsed_leases_list = []
+    for i in range(0,len(leases_list)):
+      if leases_list[i].ends > datetime.datetime.today():
+        parsed_leases_list.append(leases_list[i])
+       #print "add"
+    return parsed_leases_list
