@@ -8,6 +8,7 @@ import random
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import datetime
 
+
 def home(request):
 
         ## Adding random 100 leases to database ##
@@ -23,8 +24,7 @@ def home(request):
         ## End ##
         lease_list = Lease.objects.all()
         paginator = Paginator(lease_list, 25)
-        active_leases_count = len(parseLease(lease_list))
-        total_leases_count = len(lease_list)
+        count = listCount(lease_list)
         if request.GET.get('page'):
           page = request.GET.get('page')
         else:
@@ -39,10 +39,40 @@ def home(request):
         context = {
            'page_title': 'Homepage',
            'leases_list': leases_list,
-           'active_leases_count': active_leases_count, #todo - still not quite fast, need to rewrite.
-           'expired_leases_count': total_leases_count - active_leases_count,
+           'count': count,
         }
 	return render_to_response("home/home.html",
                             context_instance=RequestContext(request, context))
 
+def listLeases(request, leases=0):
+        leases_list = Lease.objects.all() 
+        count = listCount(leases_list)
 
+        if leases == 'active':
+          leases_list = parseLease(leases_list,'active')
+        else:
+          leases_list = parseLease(leases_list,0) 
+
+        paginator = Paginator(leases_list, 50)
+        if request.GET.get('page'):
+          page = request.GET.get('page')
+        else:
+          page = 1
+        try:
+           leases_list = paginator.page(page)
+        except PageNotAnInteger:
+           leases_list = paginator.page(1)
+        except EmptyPage:
+           leases_list = paginator.page(paginator.num_pages)
+    
+        context = {
+           'page_title': 'List Leases',
+           'leases_list': leases_list,
+           'count': count,
+        }
+	return render_to_response("home/home.html",
+                            context_instance=RequestContext(request, context))
+    
+    
+    
+     

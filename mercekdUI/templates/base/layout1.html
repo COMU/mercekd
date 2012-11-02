@@ -4,8 +4,8 @@
            <div class="span2">
 		<ul class="nav nav-main">
 			<li><a href="#typography"><i class="icon-home"></i> Homepage</a></li>
-			<li><a href="#code"><i class="icon-leaf"></i> Active Leases ({{ active_leases_count }})</a></li>
-			<li><a href="#tables"><i class="icon-fire"></i> Expired Leases ({{ expired_leases_count }})</a></li>
+			<li><a href="{% url listLeases leases="active" %}"><i class="icon-leaf"></i> Active Leases ({{ count|first }})</a></li>
+			<li><a href="{% url listLeases leases="expired" %}"><i class="icon-fire"></i> Expired Leases ({{ count|last }})</a></li>
 			<li><a href="#forms"><i class="icon-filter"></i> Advanced Search</a></li>
 			<li><a href="#buttons"><i class="icon-wrench"></i> Options</a></li>
 			<li><a href="#buttons"><i class="icon-off"></i> Logout</a></li>

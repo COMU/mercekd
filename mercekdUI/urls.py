@@ -13,6 +13,7 @@ urlpatterns = patterns('',
    # url(r'^$', leases_list, name='leases_list'),
     
     url(r'^$', 'mercekdUI.main.views.home', name='homePage'),
+    url(r'^listLeases/(?P<leases>\w+)$', 'mercekdUI.main.views.listLeases', name='listLeases'),
     # Examples:
     # url(r'^$', 'mercekdUI.views.home', name='home'),
     # url(r'^mercekdUI/', include('mercekdUI.foo.urls')),
