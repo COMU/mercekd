@@ -2,7 +2,7 @@
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 from django.core.urlresolvers import reverse
-from mercekdUI.main.models import Lease
+from mercekdUI.main.models import Lease, IpAddress, MacAddress, LeasesFilePath
 from mercekdUI.main.utils import *
 import random
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -23,6 +23,8 @@ def home(request):
            )
         ## End ##
         lease_list = Lease.objects.all()
+        ip_custom_list = IpAddress.objects.all()
+        mac_custom_list = MacAddress.objects.all()
         paginator = Paginator(lease_list, 25)
         count = listCount(lease_list)
         if request.GET.get('page'):
@@ -73,6 +75,24 @@ def listLeases(request, leases=0):
 	return render_to_response("home/home.html",
                             context_instance=RequestContext(request, context))
     
-    
-    
-     
+
+def options(request):
+        
+        if request.method == 'POST':
+    		file_path = request.POST['file_path']
+                path = LeasesFilePath.objects.create(path = file_path)
+                path.save()
+ 
+        path_list = LeasesFilePath.objects.all()
+        if path_list:
+          path_list = path_list[path_list.count()-1].path
+        else:
+          path_list = 0
+          
+	context = {
+           'page_title': 'Options',
+           'path_file' : path_list,
+	}
+
+	return render_to_response("home/options.html",
+                            context_instance=RequestContext(request, context))

@@ -4,6 +4,7 @@ import os
 
 PROJECT_NAME = 'mercekD'
 PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
+LEASE_FILE_PATH = '/var/lib/dhcpd/dhcpd.leases'
 BASE_URL = 'http://127.0.0.1:8000'
 
 DEBUG = True
