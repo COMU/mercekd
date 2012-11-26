@@ -7,14 +7,18 @@ class Lease(models.Model):
      ends = models.DateTimeField(null=True)
      uid = models.CharField(null=True)
      client = models.CharField(null=True)
+     def has_alias(self):
+        if len(self.alias_set.all())!=0:
+          return True
+        else:
+          return False
+     def get_alias(self):
+           return self.alias_set.all()[0]
 
-class MacAddress(models.Model):
-     mac = models.CharField(null=True)
-     name = models.CharField(null=True)
-
-class IpAddress(models.Model):
-     ip = models.CharField(null=True)
-     name = models.CharField(null=True)
+class Alias(models.Model):
+     lease = models.ForeignKey('Lease')
+     mac_name = models.CharField(null=True)
+     ip_name = models.CharField(null=True)
 
 class LeasesFilePath(models.Model):
      path = models.CharField(null=True)

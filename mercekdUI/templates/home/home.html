@@ -16,8 +16,8 @@
      {% for lease in leases_list.object_list %}
                 <tr>
                   <td>{{ lease.uid }}</td>
-                  <td>{{ lease.ip }}</td>
-                  <td>{{ lease.mac }}</td>
+                  <td>{% if lease.has_alias and lease.get_alias.ip_name != None %} {{ lease.get_alias.ip_name }} {% else %} {{ lease.ip }} {% endif %}</td>
+                  <td>{% if lease.has_alias and lease.get_alias.mac_name != None %} {{ lease.get_alias.mac_name }} {% else %} {{ lease.mac }} {% endif %}</td>
                   <td>{{ lease.client }} </td>
                   <td>{{ lease.starts }} </td>
                   <td>{{ lease.ends }} </td>

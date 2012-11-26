@@ -2,7 +2,7 @@
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 from django.core.urlresolvers import reverse
-from mercekdUI.main.models import Lease, IpAddress, MacAddress, LeasesFilePath
+from mercekdUI.main.models import Lease, Alias, LeasesFilePath
 from mercekdUI.main.utils import *
 import random
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -21,10 +21,9 @@ def home(request):
               uid = randMAC(),
               client = randName(),
            )
+        
         ## End ##
         lease_list = Lease.objects.all()
-        ip_custom_list = IpAddress.objects.all()
-        mac_custom_list = MacAddress.objects.all()
         paginator = Paginator(lease_list, 25)
         count = listCount(lease_list)
         if request.GET.get('page'):
