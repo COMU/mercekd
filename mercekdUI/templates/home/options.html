@@ -1,0 +1,20 @@
+{% extends "base/layout1.html" %}
+
+{% block left %}
+
+<form method="POST">
+ <fieldset>
+    <legend>Leases File Path</legend>
+    <input type="text" name="file_path" placeholder="Eg: /var/lib/dhcp.leases">
+     {% csrf_token %}
+    <span class="help-block">{% if path_file != "0" %} Current Path: <b>{{ path_file|safe }}</b> {% else %} Leave empty for default. Default: <b>/var/lib/dhcp.leases</b> {% endif %}</span>
+    <label class="checkbox">
+    </label>
+    <button type="submit" class="btn">Submit</button>
+ </fieldset>
+</form>
+
+
+{% endblock %}
+
+
