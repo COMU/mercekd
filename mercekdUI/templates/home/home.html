@@ -1,7 +1,9 @@
 {% extends "base/layout1.html" %}
 
 {% block left %}
+<div id="editable">
   <table class="table table-hover">
+
      <thead>
                 <tr>
                   <th>UID</th>
@@ -13,19 +15,20 @@
                 </tr>
      </thead>
      <tbody>
-     {% for lease in leases_list.object_list %}
+     {% for lease,value in result.items %}
                 <tr>
                   <td>{{ lease.uid }}</td>
-                  <td>{% if lease.has_alias and lease.get_alias.ip_name != None %} {{ lease.get_alias.ip_name }} {% else %} {{ lease.ip }} {% endif %}</td>
-                  <td>{% if lease.has_alias and lease.get_alias.mac_name != None %} {{ lease.get_alias.mac_name }} {% else %} {{ lease.mac }} {% endif %}</td>
+                  <td><a href="#"  id="{{ lease.id }}" data-type="text" data-name="ip" data-pk="{{ lease.id }}" data-title="{{ lease.ip.v4 }}" >{% if value.0 != None and value.0 %} {{ value.0 }} {% else %} {{ lease.ip.v4 }} {% endif %}</a></td>
+                  <td><a href="#"  id="{{ lease.id }}" data-type="text" data-name="mac" data-pk="{{ lease.id }}" data-title="{{ lease.mac.mac }}" >{% if value.1 and value.1 != None %} {{ value.1 }} {% else %} {{ lease.mac.mac }} {% endif %}</a></td>
                   <td>{{ lease.client }} </td>
                   <td>{{ lease.starts }} </td>
                   <td>{{ lease.ends }} </td>
                 </tr>     
      {% endfor %}
-     </tbody>  
-  </table>   
+     </tbody>
 
+  </table>
+</div>
 <div class="pagination">
     <span class="step-links">
         {% if leases_list.has_previous %}

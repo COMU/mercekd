@@ -1,5 +1,6 @@
 from random import randint
 import random, time, string, datetime
+from mercekdUI.main.models import Lease, Lease_IP, Lease_Mac
 
 def randIP():
     a = randint(1,254)
@@ -28,7 +29,7 @@ def randDate(start, end, prop):
    return strTimeProp(start, end, '%Y-%m-%d %I:%M:%S', prop)
 
 
-def randName(size=randint(1,10), chars=string.ascii_uppercase):
+def randName(size=randint(6,10), chars=string.ascii_uppercase):
    return ''.join(random.choice(chars) for x in range(size))
 
 def parseLease(leases_list, status=0):
@@ -50,3 +51,95 @@ def listCount(lease_list):
      count.append(len(parseLease(lease_list,'0')))
      return count
 
+def addRandomLeases():
+     ## Add random 100 leases to database ##
+     for i in range(0,5):
+         randomnumber = random.randint(0,5)
+         if  randomnumber == 1:
+             Lease.objects.create(
+                 ip = Lease_IP.objects.create(
+                     v4 = randIP(),
+                     ip_name =randName(),
+                 ),
+                 mac = Lease_Mac.objects.create(
+                     mac = randMAC(),
+                     mac_name =randName(),
+                 ),
+                 starts = randDate("2012-01-21 01:01:01", "2012-06-30 11:01:59", random.random()),
+                 ends = randDate("2012-06-30 01:01:01", "2012-12-30 11:01:59", random.random()),
+                 uid = randMAC(),
+                 client = randName(),
+                 )
+         elif randomnumber == 2:
+             Lease.objects.create(
+                 ip = Lease_IP.objects.create(
+                     v4 = randIP(),
+                 ),
+                 mac = Lease_Mac.objects.create(
+                     mac = randMAC(),
+                     mac_name =randName(),
+                 ),
+                 starts = randDate("2012-01-21 01:01:01", "2012-06-30 11:01:59", random.random()),
+                 ends = randDate("2012-06-30 01:01:01", "2012-12-30 11:01:59", random.random()),
+                 uid = randMAC(),
+                 client = randName(),
+             )
+         elif randomnumber == 3:
+             Lease.objects.create(
+                 ip = Lease_IP.objects.create(
+                     v4 = randIP(),
+                     ip_name =randName(),
+                 ),
+                 mac = Lease_Mac.objects.create(
+                     mac = randMAC(),
+                 ),
+                 starts = randDate("2012-01-21 01:01:01", "2012-06-30 11:01:59", random.random()),
+                 ends = randDate("2012-06-30 01:01:01", "2012-12-30 11:01:59", random.random()),
+                 uid = randMAC(),
+                 client = randName(),
+             )
+
+         else:
+             Lease.objects.create(
+                 ip = Lease_IP.objects.create(
+                     v4 = randIP(),
+                     ip_name =randName(),
+                 ),
+                 mac = Lease_Mac.objects.create(
+                     mac = randMAC(),
+                 ),
+                 starts = randDate("2012-01-21 01:01:01", "2012-06-30 11:01:59", random.random()),
+                 ends = randDate("2012-06-30 01:01:01", "2012-12-30 11:01:59", random.random()),
+                 uid = randMAC(),
+                 client = randName(),
+             )
+
+             ### Random function ends ###
+
+def addCustomLeases():
+    Lease.objects.create(
+        ip = Lease_IP.objects.create(
+            v4 = "test235",
+            ip_name ="test363452"
+        ),
+        mac = Lease_Mac.objects.create(
+            mac = "test",
+            mac_name="test2"
+        ),
+        starts = randDate("2012-01-21 01:01:01", "2012-06-30 11:01:59", random.random()),
+        ends = randDate("2012-06-30 01:01:01", "2012-12-30 11:01:59", random.random()),
+        uid = randMAC(),
+        client = "test23",
+    )
+    Lease.objects.create(
+        ip = Lease_IP.objects.create(
+            v4 = "test235",
+        ),
+        mac = Lease_Mac.objects.create(
+            mac = "test123",
+        ),
+        starts = randDate("2012-01-21 01:01:01", "2012-06-30 11:01:59", random.random()),
+        ends = randDate("2012-06-30 01:01:01", "2012-12-30 11:01:59", random.random()),
+        uid = randMAC(),
+        client = "test214512",
+    )
