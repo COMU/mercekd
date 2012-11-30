@@ -139,6 +139,9 @@ def postAlias(request):
           leases = Lease_IP.objects.filter(v4=lease.ip.v4)
           if len(leases)!=0:
               leases[0].ip_name = None
+          macs = Lease_Mac.objects.filter(mac=lease.mac.mac)
+          if len(macs)!=0:
+              leases[0].ip_name = None
           if post_name=="mac":
             lease.mac.mac_name = post_value
             lease.mac.save()
