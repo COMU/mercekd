@@ -1,17 +1,17 @@
 {% extends "base/layout1.html" %}
-
+{% load i18n %}
 {% block left %}
 <div id="editable">
   <table class="table table-hover">
 
      <thead>
                 <tr>
-                  <th>UID</th>
-                  <th>IP</th>
-                  <th>Mac</th>
-                  <th>Client-Name</th>
-                  <th>Starts</th>
-                  <th>Ends</th>
+                  <th>{% trans "UID" %}</th>
+                  <th>{% trans "IP" %}</th>
+                  <th>{% trans "Mac" %}</th>
+                  <th>{% trans "Client-Name" %}</th>
+                  <th>{% trans "Starts" %}</th>
+                  <th>{% trans "Ends" %}</th>
                 </tr>
      </thead>
      <tbody>
@@ -32,15 +32,15 @@
 <div class="pagination">
     <span class="step-links">
         {% if leases_list.has_previous %}
-            <a href="?page={{ leases_list.previous_page_number }}">previous</a>
+            <a href="?page={{ leases_list.previous_page_number }}">{% trans "previous" %}</a>
         {% endif %}
 
         <span class="current">
-            Page {{ leases_list.number }} of {{ leases_list.paginator.num_pages }}.
+            {% trans "Page" %} {{ leases_list.number }} of {{ leases_list.paginator.num_pages }}.
         </span>
 
         {% if leases_list.has_next %}
-            <a href="?page={{ leases_list.next_page_number }}">next</a>
+            <a href="?page={{ leases_list.next_page_number }}">{% trans "next" %}</a>
         {% endif %}
     </span>
 </div>

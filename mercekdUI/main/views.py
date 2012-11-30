@@ -2,14 +2,13 @@
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 from django.core.urlresolvers import reverse
-from mercekdUI.main.models import Lease, Lease_IP, Lease_Mac, LeasesFilePath
-from mercekdUI.main.utils import *
-import random
+from django.utils.translation import ugettext as _
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-import datetime
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-import json
+from mercekdUI.main.models import Lease, Lease_IP, Lease_Mac, LeasesFilePath
+from mercekdUI.main.utils import *
+import random, datetime, json
 
 def home(request):
         addCustomLeases()

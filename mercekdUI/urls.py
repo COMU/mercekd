@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     url(r'^listLeases/(?P<leases>\w+)$', 'mercekdUI.main.views.listLeases', name='listLeases'),
     url(r'^options/$', 'mercekdUI.main.views.options', name='options'),
     url(r'^postAlias/$', 'mercekdUI.main.views.postAlias', name='postAlias'),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
     # Examples:
     # url(r'^$', 'mercekdUI.views.home', name='home'),
     # url(r'^mercekdUI/', include('mercekdUI.foo.urls')),

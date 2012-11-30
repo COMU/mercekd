@@ -36,12 +36,23 @@ TIME_ZONE = 'America/Chicago'
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'tr-tr'
 
 SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
 USE_I18N = True
+
+
+# see http://code.djangoproject.com/browser/django/trunk/django/conf/global_settings.py
+_ = lambda s: s
+
+LANGUAGES = (
+    ('tr', _('Turkish')),
+    ('en', _('English')),
+    )
+
 
 # If you set this to False, Django will not format dates, numbers and
 # calendars according to the current locale.
@@ -100,6 +111,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -118,9 +130,15 @@ os.path.join(PROJECT_PATH, 'templates'),
 )
 
 
+TEMPLATE_CONTEXT_PROCESSORS = ("django.contrib.auth.context_processors.auth",
+                               "django.core.context_processors.debug",
+                               "django.core.context_processors.i18n",
+    )
+
 
 INSTALLED_APPS = (
     'django.contrib.auth',
+    'mercekdUI.main',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
@@ -131,6 +149,11 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
+
+
+LOCALE_PATHS = (
+    os.path.join(PROJECT_PATH, 'main/locale/'),
+    )
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

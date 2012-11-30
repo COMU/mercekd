@@ -1,14 +1,15 @@
 {% extends "base/base.html" %}
+{% load i18n %}
 
         {% block navigation %}
            <div class="span2">
 		<ul class="nav nav-main">
-			<li><a href="{% url homePage %}"><i class="icon-home"></i> Homepage</a></li>
-			<li><a href="{% url listLeases leases="active" %}"><i class="icon-leaf"></i> Active Leases ({{ count|first }})</a></li>
-			<li><a href="{% url listLeases leases="expired" %}"><i class="icon-fire"></i> Expired Leases ({{ count|last }})</a></li>
-			<li><a href="#forms"><i class="icon-filter"></i> Advanced Search</a></li>
-			<li><a href="{% url options %}"><i class="icon-wrench"></i> Options</a></li>
-			<li><a href=""><i class="icon-off"></i> Logout</a></li>
+			<li><a href="{% url homePage %}"><i class="icon-home"></i> {% trans "Homepage" %}</a></li>
+			<li><a href="{% url listLeases leases="active" %}"><i class="icon-leaf"></i> {% trans "Active Leases" %} ({{ count|first }})</a></li>
+			<li><a href="{% url listLeases leases="expired" %}"><i class="icon-fire"></i> {% trans "Expired Leases" %} ({{ count|last }})</a></li>
+			<li><a href="#forms"><i class="icon-filter"></i> {% trans "Advanced Search"  %}</a></li>
+			<li><a href="{% url options %}"><i class="icon-wrench"></i> {% trans "Options"  %}</a></li>
+			<li><a href=""><i class="icon-off"></i> {% trans "Logout"  %}</a></li>
 		</ul>
            </div>
         {% endblock %}
