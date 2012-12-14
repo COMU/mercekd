@@ -3,7 +3,7 @@
 {% block left %}
 
     <div align=right>
-    <form class="form-search" method="POST" action="/listLeases/all">
+    <form class="form-search" name="search_form" id="search_form" method="POST" action="/listLeases/all">
         {% csrf_token %}
         <input id="q" name="q" type="text" class="input-medium search-query">
         <button name="searchSubmit" type="submit" class="btn">{% trans "Filter" %}</button>
@@ -23,11 +23,14 @@
         </tr>
         </thead>
         <tbody>
+
+
+
         {% for lease,value in result.items %}
             <tr>
                 <td>{{ lease.uid }}</td>
-                <td><a href="#"  id="{{ lease.id }}" data-type="text" data-name="ip" data-pk="{{ lease.id }}" data-title="{{ lease.ip.v4 }}" >{% if value.0 != None and value.0 %} {{ value.0 }} {% else %} {{ lease.ip.v4 }} {% endif %}</a></td>
-                <td><a href="#"  id="{{ lease.id }}" data-type="text" data-name="mac" data-pk="{{ lease.id }}" data-title="{{ lease.mac.mac }}" >{% if value.1 and value.1 != None %} {{ value.1 }} {% else %} {{ lease.mac.mac }} {% endif %}</a></td>
+                <td><a href="#"  id="{{ lease.id }}" data-type="text" data-name="ip" data-pk="{{ lease.id }}" data-title="{{ lease.ip.v4 }} - <a href='#' onClick=linkPost('{{ lease.ip.v4 }}'); >{% trans 'Show History</a>' %}" >{% if value.0 != None and value.0 %} {{ value.0 }} {% else %} {{ lease.ip.v4 }} {% endif %}</a></td>
+                <td><a href="#"  id="{{ lease.id }}" data-type="text" data-name="mac" data-pk="{{ lease.id }}" data-title="{{ lease.mac.mac }} - <a href='#' onClick=linkPost('{{ lease.mac.mac }}'); >{% trans 'Show History</a>' %}" >{% if value.1 and value.1 != None %} {{ value.1 }} {% else %} {{ lease.mac.mac }} {% endif %}</a></td>
                 <td>{{ lease.client }} </td>
                 <td>{{ lease.starts }} </td>
                 <td>{{ lease.ends }} </td>

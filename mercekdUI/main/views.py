@@ -71,7 +71,7 @@ def listLeases(request, leases=0):
         result = handleAliases(leases_list)
 
         context = {
-           'page_title': 'List Leases',
+           'page_title': 'Lease List',
            'leases_list': leases_list,
            'result': result,
            'count': listCount(),
@@ -100,6 +100,7 @@ def options(request):
 
 	return render_to_response("home/options.html",
                             context_instance=RequestContext(request, context))
+
 @csrf_exempt
 def postAlias(request):
     if request.method:
