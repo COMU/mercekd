@@ -2,6 +2,33 @@ from random import randint
 import random, time, string, datetime
 from mercekdUI.main.models import Lease, Lease_IP, Lease_Mac
 
+def f7(seq):
+    seen = set()
+    seen_add = seen.add
+    return [ x for x in seq if x not in seen and not seen_add(x)]
+
+def handleAliases(leases_list):
+    '''
+    leases_list must be a QueryList
+    '''
+    result = dict()
+    for lease in leases_list.object_list:
+        ip_address = Lease_IP.objects.filter(v4=lease.ip.v4).exclude(ip_name=None)
+        mac_address = Lease_Mac.objects.filter(mac=lease.mac.mac).exclude(mac_name=None)
+
+        if len(ip_address)!=0:
+            if len(mac_address)!=0:
+                result[lease] = (ip_address[0].ip_name,mac_address[0].mac_name)
+            else:
+                result[lease] = (ip_address[0].ip_name,None)
+        elif len(mac_address)!=0:
+            result[lease] = (None,mac_address[0].mac_name)
+        else:
+            result[lease] = None
+    return result
+
+
+
 def randIP():
     a = randint(1,254)
     b = randint(1,254)
@@ -45,7 +72,9 @@ def parseLease(leases_list, status=0):
     else:
      return parsed_expired_leases_list
 
-def listCount(lease_list):
+def listCount(lease_list=0):
+     if not lease_list:
+        lease_list = Lease.objects.all()
      count = []
      count.append(len(parseLease(lease_list,'active')))
      count.append(len(parseLease(lease_list,'0')))

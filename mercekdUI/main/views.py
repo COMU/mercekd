@@ -1,5 +1,6 @@
 # Create your views here.
 from django.shortcuts import render_to_response
+from django.db.models import Q
 from django.template.context import RequestContext
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
@@ -11,59 +12,29 @@ from mercekdUI.main.utils import *
 import random, datetime, json
 
 def home(request):
-        addCustomLeases()
-        addRandomLeases()
-        result = dict()
-        lease_list = Lease.objects.all()
-        n=25
-        paginator = Paginator(lease_list, n)
-        count = listCount(lease_list)
-        if request.GET.get('page'):
-          page = request.GET.get('page')
-        else:
-          page = 1
-        try:
-           leases_list = paginator.page(page)
-        except PageNotAnInteger:
-           leases_list = paginator.page(1)
-        except EmptyPage:
-           leases_list = paginator.page(paginator.num_pages)
 
-        for lease in leases_list.object_list:
-            ip_address = Lease_IP.objects.filter(v4=lease.ip.v4).exclude(ip_name=None)
-            mac_address = Lease_Mac.objects.filter(mac=lease.mac.mac).exclude(mac_name=None)
-
-            if len(ip_address)!=0:
-                if len(mac_address)!=0:
-                  result[lease] = (ip_address[0].ip_name,mac_address[0].mac_name)
-                else:
-                  result[lease] = (ip_address[0].ip_name,None)
-            elif len(mac_address)!=0:
-                  result[lease] = (None,mac_address[0].mac_name)
-            else:
-                  result[lease] = None
-
-
-            #print result
-
+        count = listCount()
         context = {
            'page_title': 'Homepage',
-           'leases_list': leases_list,
-           'result': result,
            'count': count,
         }
 	return render_to_response("home/home.html",
                             context_instance=RequestContext(request, context))
 
 def listLeases(request, leases=0):
-        leases_list = Lease.objects.all()
-        count = listCount(leases_list)
-        result = dict()
-        if leases == 'active':
-          leases_list = parseLease(leases_list,'active')
-        else:
-          leases_list = parseLease(leases_list,0) 
 
+        result = dict()
+
+        if leases == 'active':
+            leases_list = Lease.objects.all()
+            leases_list = parseLease(leases_list,'active')
+        elif leases == 'expired':
+            leases_list = Lease.objects.all()
+            leases_list = parseLease(leases_list,0)
+        else:
+            leases_list = Lease.objects.all()
+
+        count = listCount()
         paginator = Paginator(leases_list, 50)
         if request.GET.get('page'):
           page = request.GET.get('page')
@@ -76,30 +47,14 @@ def listLeases(request, leases=0):
         except EmptyPage:
            leases_list = paginator.page(paginator.num_pages)
 
-        for lease in leases_list.object_list:
-            ip_address = Lease_IP.objects.filter(v4=lease.ip.v4).exclude(ip_name=None)
-            mac_address = Lease_Mac.objects.filter(mac=lease.mac.mac).exclude(mac_name=None)
-
-            if len(ip_address)!=0:
-                if len(mac_address)!=0:
-                    result[lease] = (ip_address[0].ip_name,mac_address[0].mac_name)
-                else:
-                    result[lease] = (ip_address[0].ip_name,None)
-            elif len(mac_address)!=0:
-                result[lease] = (None,mac_address[0].mac_name)
-            else:
-                result[lease] = None
-
-
-
+        result = handleAliases(leases_list)
 
         context = {
            'page_title': 'List Leases',
-           'leases_list': leases_list,
            'result': result,
            'count': count,
         }
-	return render_to_response("home/home.html",
+	return render_to_response("home/leases.html",
                             context_instance=RequestContext(request, context))
     
 
@@ -123,11 +78,9 @@ def options(request):
 
 	return render_to_response("home/options.html",
                             context_instance=RequestContext(request, context))
-
 @csrf_exempt
 def postAlias(request):
     if request.method:
-
           data=json.dumps(request.POST)
           data=json.loads(data)
           post_pk = data["pk"]
