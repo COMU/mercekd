@@ -3,9 +3,10 @@
 {% block left %}
 
     <div align=right>
-    <form class="form-search">
-        <input id="q" type="text" class="input-medium search-query">
-        <button id="searchSubmit" type="submit" class="btn">{% trans "Filter" %}</button>
+    <form class="form-search" method="POST" action="/listLeases/all">
+        {% csrf_token %}
+        <input id="q" name="q" type="text" class="input-medium search-query">
+        <button name="searchSubmit" type="submit" class="btn">{% trans "Filter" %}</button>
     </form>
 </div>
 <div id="editable">

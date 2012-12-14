@@ -6,7 +6,7 @@
 
 <form method="POST">
  <fieldset>
-    <legend>{% trans Leases File Path</legend>
+    <legend>{% trans "Leases File Path" %}</legend>
     <input type="text" name="file_path" placeholder="Eg: /var/lib/dhcp.leases">
      {% csrf_token %}
     <span class="help-block"> {% if path_file != "0" %}{% trans "Current Path:" %}<b>{{ path_file|safe }}</b> {% else %} {% trans "Leave empty for default. Default: <b>/var/lib/dhcp.leases</b>" %} {% endif %}</span>

@@ -22,37 +22,59 @@ def home(request):
                             context_instance=RequestContext(request, context))
 
 def listLeases(request, leases=0):
+        if request.POST:
+            q = request.POST.get('q')
+            if q is not None:
+                    lease_ip_list = Lease_IP.objects.filter(
+                      Q(v4__contains = q) |
+                      Q(ip_name__contains = q))
+                    print lease_ip_list
 
-        result = dict()
+                    lease_mac_list = Lease_Mac.objects.filter(
+                        Q(mac__contains = q) |
+                        Q(mac_name__contains = q))
+
+                    print lease_mac_list
+
+                    leases_list = Lease.objects.get_empty_query_set()
+                    if len(lease_ip_list):
+                        for i in lease_ip_list:
+                            leases_list = leases_list | Lease.objects.filter(ip=i.id)
+                    if len(lease_mac_list):
+                        for i in lease_mac_list:
+                            leases_list = leases_list | Lease.objects.filter(mac=i.id)
+            #else:
+            #    leases_list = Lease.objects.all()
+
+        else:
+            leases_list = Lease.objects.all()
 
         if leases == 'active':
-            leases_list = Lease.objects.all()
             leases_list = parseLease(leases_list,'active')
         elif leases == 'expired':
-            leases_list = Lease.objects.all()
             leases_list = parseLease(leases_list,0)
         else:
-            leases_list = Lease.objects.all()
+            leases_list = leases_list
 
-        count = listCount()
         paginator = Paginator(leases_list, 50)
         if request.GET.get('page'):
-          page = request.GET.get('page')
+            page = request.GET.get('page')
         else:
-          page = 1
+            page = 1
         try:
-           leases_list = paginator.page(page)
+            leases_list = paginator.page(page)
         except PageNotAnInteger:
-           leases_list = paginator.page(1)
+            leases_list = paginator.page(1)
         except EmptyPage:
-           leases_list = paginator.page(paginator.num_pages)
+            leases_list = paginator.page(paginator.num_pages)
 
         result = handleAliases(leases_list)
 
         context = {
            'page_title': 'List Leases',
+           'leases_list': leases_list,
            'result': result,
-           'count': count,
+           'count': listCount(),
         }
 	return render_to_response("home/leases.html",
                             context_instance=RequestContext(request, context))

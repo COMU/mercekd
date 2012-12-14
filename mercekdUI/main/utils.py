@@ -27,8 +27,6 @@ def handleAliases(leases_list):
             result[lease] = None
     return result
 
-
-
 def randIP():
     a = randint(1,254)
     b = randint(1,254)
