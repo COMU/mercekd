@@ -97,6 +97,7 @@ def options(request):
 	context = {
            'page_title': 'Options',
            'path_file' : path_list,
+           'count': listCount(),
 	}
 
 	return render_to_response("home/options.html",

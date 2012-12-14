@@ -7,9 +7,9 @@
 			<li><a href="{% url homePage %}"><i class="icon-home"></i> {% trans "Homepage" %}</a></li>
 			<li><a href="{% url listLeases leases="active" %}"><i class="icon-leaf"></i> {% trans "Active Leases" %} ({{ count|first }})</a></li>
 			<li><a href="{% url listLeases leases="expired" %}"><i class="icon-fire"></i> {% trans "Expired Leases" %} ({{ count|last }})</a></li>
-			<li><a href="#forms"><i class="icon-filter"></i> {% trans "Advanced Search"  %}</a></li>
-			<li><a href="{% url options %}"><i class="icon-wrench"></i> {% trans "Options"  %}</a></li>
-			<li><a href=""><i class="icon-off"></i> {% trans "Logout"  %}</a></li>
+			<li><a href="#"><i class="icon-filter"></i> {% trans "Advanced Search"  %}</a></li>
+            <li><a href="#"><i class="icon-eye-close"></i> {% trans "IP Address Blocks"  %}</a></li>
+            <li><a href="{% url options %}"><i class="icon-wrench"></i> {% trans "Options"  %}</a></li>
 		</ul>
            </div>
         {% endblock %}
