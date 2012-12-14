@@ -75,13 +75,14 @@ def listLeases(request, leases=0):
            'leases_list': leases_list,
            'result': result,
            'count': listCount(),
+           'now': datetime.datetime.today()
         }
 	return render_to_response("home/leases.html",
                             context_instance=RequestContext(request, context))
     
 
 def options(request):
-        
+
         if request.method == 'POST':
     		file_path = request.POST['file_path']
                 path = LeasesFilePath.objects.create(path = file_path)

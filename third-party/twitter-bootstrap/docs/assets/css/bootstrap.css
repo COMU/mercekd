@@ -1774,13 +1774,13 @@ table [class*=span],
   background-color: #ccddbb;
 }
 .table tbody tr.error td {
-  background-color: #eddbe3;
+  background-color: #FDEEF4;
 }
 .table tbody tr.warning td {
   background-color: #8accf2;
 }
 .table tbody tr.info td {
-  background-color: #a7dff1;
+  background-color: #E3E4FA;
 }
 .table-hover tbody tr.success:hover td {
   background-color: #bfd4aa;

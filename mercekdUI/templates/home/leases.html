@@ -27,7 +27,8 @@
 
 
         {% for lease,value in result.items %}
-            <tr>
+
+            <tr class="{% if lease.ends > now %}info{% else %}error{% endif %}">
                 <td>{{ lease.uid }}</td>
                 <td><a href="#"  id="{{ lease.id }}" data-type="text" data-name="ip" data-pk="{{ lease.id }}" data-title="{{ lease.ip.v4 }} - <a href='#' onClick=linkPost('{{ lease.ip.v4 }}'); >{% trans 'Show History</a>' %}" >{% if value.0 != None and value.0 %} {{ value.0 }} {% else %} {{ lease.ip.v4 }} {% endif %}</a></td>
                 <td><a href="#"  id="{{ lease.id }}" data-type="text" data-name="mac" data-pk="{{ lease.id }}" data-title="{{ lease.mac.mac }} - <a href='#' onClick=linkPost('{{ lease.mac.mac }}'); >{% trans 'Show History</a>' %}" >{% if value.1 and value.1 != None %} {{ value.1 }} {% else %} {{ lease.mac.mac }} {% endif %}</a></td>
