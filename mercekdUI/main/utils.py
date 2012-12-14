@@ -1,5 +1,6 @@
 from random import randint
 import random, time, string, datetime
+from django.template.defaulttags import now
 from mercekdUI.main.models import Lease, Lease_IP, Lease_Mac
 
 def f7(seq):
@@ -71,11 +72,9 @@ def parseLease(leases_list, status=0):
      return parsed_expired_leases_list
 
 def listCount(lease_list=0):
-     if not lease_list:
-        lease_list = Lease.objects.all()
-     count = []
-     count.append(len(parseLease(lease_list,'active')))
-     count.append(len(parseLease(lease_list,'0')))
+     count=[]
+     count.append(Lease.objects.filter(ends__gt=datetime.datetime.today()).count())
+     count.append(Lease.objects.filter(ends__lte=datetime.datetime.today()).count())
      return count
 
 def addRandomLeases():
