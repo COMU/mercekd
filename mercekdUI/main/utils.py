@@ -59,17 +59,10 @@ def randName(size=randint(6,10), chars=string.ascii_uppercase):
    return ''.join(random.choice(chars) for x in range(size))
 
 def parseLease(leases_list, status=0):
-    parsed_leases_list = []
-    parsed_expired_leases_list = []
-    for i in range(0,len(leases_list)):
-       if leases_list[i].ends > datetime.datetime.today():
-         parsed_leases_list.append(leases_list[i])
-       else:
-         parsed_expired_leases_list.append(leases_list[i])
     if status=='active':
-     return parsed_leases_list
+     return Lease.objects.filter(ends__gt=datetime.datetime.today())
     else:
-     return parsed_expired_leases_list
+     return Lease.objects.filter(ends__lte=datetime.datetime.today())
 
 def listCount(lease_list=0):
      count=[]
