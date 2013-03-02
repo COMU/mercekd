@@ -9,14 +9,33 @@
     <legend>{% trans "Leases File Path" %}</legend>
     <input type="text" name="file_path" placeholder="Eg: /var/lib/dhcp.leases">
      {% csrf_token %}
-    <span class="help-block"> {% if path_file != "0" %}{% trans "Current Path:" %}<b>{{ path_file|safe }}</b> {% else %} {% trans "Leave empty for default. Default: <b>/var/lib/dhcp.leases</b>" %} {% endif %}</span>
-    <label class="checkbox">
-    </label>
-    <button type="submit" class="btn">{% trans "Submit" %}</button>
+    <span class="help-block"> {% if path_file != 0 %}{% trans "Current Path:" %}<b>{{ path_file|safe }}</b> {% else %} {% trans "Leave empty for default. Default: <b>/var/lib/dhcp.leases</b>" %} {% endif %}</span>
  </fieldset>
+    <button type="submit" class="btn btn-primary">{% trans "Submit" %}</button>
 </form>
-
-
+<form method="POST">
+ <fieldset>
+    <legend>{% trans "Add Subnet" %}</legend>
+    <input type="text" name="ip" placeholder="IP Adress">
+    <input type="text" name="mask" placeholder="Mask">
+    <input type="text" name="alias" placeholder="Alias">
+     {% csrf_token %}
+ </fieldset>
+ <button type="submit" class="btn btn-primary">{% trans "Add" %}</button>
+</form>
+<div id="editable">
+    <div id="status"></div>
+    <table id="subnets" class="table table-condensed table-bordered">
+    <h4>{% trans "Subnets" %}</h4>
+        {% for subnet in result %}       
+       <tr id="id_{{ subnet.id }}">
+       <td><a href="#"  id="{{ subnet.id }}" data-type="text" data-name="ip" data-pk="{{ subnet.id }}" data-title="{{ subnet.alias }} - <a href='#' onClick=linkDelete('{{ subnet.id }}'); >{% trans 'Delete</a>' %}" >{{ subnet.ip }}</a></td>
+         <td>{{ subnet.mask }}</td>
+         <td><b>{{ subnet.alias }}</b></td>
+       </tr>
+        {% endfor %}
+    </table>
+</div>
 {% endblock %}
 
 

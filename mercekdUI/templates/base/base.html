@@ -80,6 +80,20 @@
         document.search_form['q'].value = post_value;
         document.search_form.submit();
         }
+        function linkDelete(post_value) {
+        $.ajax({
+            type: "GET",
+            url: "/options/",
+            data: "id=" + post_value,
+            success: function(){
+                $('.editable-container').find('.editable-cancel').click();
+                $("#subnets tr[id='id_" + post_value + "']").hide()
+            },
+            error:function(){
+                alert("{% trans "Cannot be deleted" %}");
+            }
+        })
+        }
     </script>
 
     <script src="/site_media/bootstrap/assets/js/bootstrap-alert.js"></script>

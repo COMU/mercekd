@@ -7,9 +7,11 @@ from django.utils.translation import ugettext as _
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from mercekdUI.main.models import Lease, Lease_IP, Lease_Mac, LeasesFilePath
+from mercekdUI.main.models import Lease, Lease_IP, Lease_Mac, LeasesFilePath, Subnet
 from mercekdUI.main.utils import *
 import random, datetime, json
+import ipcalc
+
 
 def home(request):
 
@@ -84,20 +86,51 @@ def listLeases(request, leases=0):
 def options(request):
 
         if request.method == 'POST':
+          try:            
+           if request.POST['file_path']:
     		file_path = request.POST['file_path']
                 path = LeasesFilePath.objects.create(path = file_path)
                 path.save()
+          except:
+           pass
+          try:
+           if request.POST['ip'] and request.POST['mask'] and request.POST['alias']:
+    		p_ip = request.POST['ip']
+    		p_mask = request.POST['mask']
+    		p_alias = request.POST['alias']
+                p = Subnet.objects.create(ip=p_ip,mask=p_mask,alias=p_alias)
+                p.save()
+          except:
+           pass
+
+
+        if request.method == "GET":
+            try:
+               d_id = request.GET['id']
+               d_select = Subnet.objects.get(id=d_id)
+               d_select.delete()
+               print "silindi"
+            except:
+               pass
  
         path_list = LeasesFilePath.objects.all()
         if path_list:
           path_list = path_list[path_list.count()-1].path
         else:
           path_list = 0
-          
+        try:
+          result = Subnet.objects.all()
+          print result[0].ip
+        except:
+          pass
+
+
+
 	context = {
            'page_title': 'Options',
            'path_file' : path_list,
            'count': listCount(),
+           'result': result,
 	}
 
 	return render_to_response("home/options.html",

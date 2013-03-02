@@ -19,4 +19,9 @@ class Lease_Mac(models.Model):
 class LeasesFilePath(models.Model):
      path = models.TextField(null=True)
 
+class Subnet(models.Model):
+     ip = models.TextField(null=True)
+     mask = models.TextField(null=True)
+     alias = models.TextField(null=True)
+     
 # Create your models here.
