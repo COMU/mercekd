@@ -161,3 +161,13 @@ def postAlias(request):
     response_data={}
     response_data['result'] = 'okay'
     return HttpResponse(json.dumps(response_data), mimetype="application/json")
+
+def IPv4addressmap(request):
+
+    count = listCount()
+    context = {
+        'page_title': 'Homepage',
+        'count': count,
+        }
+    return render_to_response("home/ipv4addressmap.html",
+                              context_instance=RequestContext(request, context))

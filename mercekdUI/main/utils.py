@@ -84,8 +84,8 @@ def addRandomLeases():
                      mac = randMAC(),
                      mac_name =randName(),
                  ),
-                 starts = randDate("2012-01-21 01:01:01", "2012-06-30 11:01:59", random.random()),
-                 ends = randDate("2012-06-30 01:01:01", "2012-12-30 11:01:59", random.random()),
+                 starts = randDate("2012-01-21 01:01:01", "2013-06-30 11:01:59", random.random()),
+                 ends = randDate("2012-06-30 01:01:01", "2013-12-30 11:01:59", random.random()),
                  uid = randMAC(),
                  client = randName(),
                  )
@@ -98,8 +98,8 @@ def addRandomLeases():
                      mac = randMAC(),
                      mac_name =randName(),
                  ),
-                 starts = randDate("2012-01-21 01:01:01", "2012-06-30 11:01:59", random.random()),
-                 ends = randDate("2012-06-30 01:01:01", "2012-12-30 11:01:59", random.random()),
+                 starts = randDate("2012-01-21 01:01:01", "2013-06-30 11:01:59", random.random()),
+                 ends = randDate("2012-06-30 01:01:01", "2013-12-30 11:01:59", random.random()),
                  uid = randMAC(),
                  client = randName(),
              )
@@ -112,8 +112,8 @@ def addRandomLeases():
                  mac = Lease_Mac.objects.create(
                      mac = randMAC(),
                  ),
-                 starts = randDate("2012-01-21 01:01:01", "2012-06-30 11:01:59", random.random()),
-                 ends = randDate("2012-06-30 01:01:01", "2012-12-30 11:01:59", random.random()),
+                 starts = randDate("2012-01-21 01:01:01", "2013-06-30 11:01:59", random.random()),
+                 ends = randDate("2012-06-30 01:01:01", "2013-12-30 11:01:59", random.random()),
                  uid = randMAC(),
                  client = randName(),
              )
@@ -127,8 +127,8 @@ def addRandomLeases():
                  mac = Lease_Mac.objects.create(
                      mac = randMAC(),
                  ),
-                 starts = randDate("2012-01-21 01:01:01", "2012-06-30 11:01:59", random.random()),
-                 ends = randDate("2012-06-30 01:01:01", "2012-12-30 11:01:59", random.random()),
+                 starts = randDate("2012-01-21 01:01:01", "2013-06-30 11:01:59", random.random()),
+                 ends = randDate("2012-06-30 01:01:01", "2013-12-30 11:01:59", random.random()),
                  uid = randMAC(),
                  client = randName(),
              )
