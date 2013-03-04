@@ -152,7 +152,7 @@ INSTALLED_APPS = (
 
 
 LOCALE_PATHS = (
-    os.path.join(PROJECT_PATH, 'main/locale/'),
+    os.path.join(PROJECT_PATH, 'locale/'),
     )
 
 # A sample logging configuration. The only tangible logging
