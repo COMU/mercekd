@@ -24,13 +24,13 @@ def home(request):
                             context_instance=RequestContext(request, context))
 
 def listLeases(request, leases=0):
+        addRandomLeases()
         if request.POST:
             q = request.POST.get('q')
             if q is not None:
                     lease_ip_list = Lease_IP.objects.filter(
                       Q(v4__contains = q) |
                       Q(ip_name__contains = q))
-                    print lease_ip_list
 
                     lease_mac_list = Lease_Mac.objects.filter(
                         Q(mac__contains = q) |
@@ -100,6 +100,21 @@ def options(request):
     		p_alias = request.POST['alias']
                 p = Subnet.objects.create(ip=p_ip,mask=p_mask,alias=p_alias)
                 p.save()
+                l_ip = p_ip.split('.')
+                l_ip = l_ip[0] + '.' + l_ip[1] + '.' + l_ip[2]
+                print l_ip
+                #l_id = Lease_IP.objects.filter(v4=l_ip)
+                l_id =   Lease_IP.objects.filter(
+                     Q(v4__contains = l_ip))
+                print l_id
+                for l_single in l_id:
+                    print l_single.id
+                    l = Lease.objects.filter(ip=l_single.id)
+                    for i in l:
+                        i.subnetAlias = p.alias
+                        i.save()
+                        print i.subnet.alias
+                    print "okayoldu"
           except:
            pass
 
@@ -120,7 +135,7 @@ def options(request):
           path_list = 0
         try:
           result = Subnet.objects.all()
-          print result[0].ip
+
         except:
           pass
 

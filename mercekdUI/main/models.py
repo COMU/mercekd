@@ -7,6 +7,7 @@ class Lease(models.Model):
      ends = models.DateTimeField(null=True)
      uid = models.TextField(null=True)
      client = models.TextField(null=True)
+     subnetAlias = models.TextField(null=True)
 
 class Lease_IP(models.Model):
      v4 = models.TextField(null=True)

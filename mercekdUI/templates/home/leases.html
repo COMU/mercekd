@@ -20,6 +20,7 @@
             <th>{% trans "Client-Name" %}</th>
             <th>{% trans "Starts" %}</th>
             <th>{% trans "Ends" %}</th>
+            <th>{% trans "Subnet" %}</th>
         </tr>
         </thead>
         <tbody>
@@ -35,6 +36,7 @@
                 <td>{{ lease.client }}</td>
                 <td>{{ lease.starts }} </td>
                 <td>{{ lease.ends }} </td>
+                <td>{% if lease.subnetAlias != "0" %}{{ lease.subnetAlias }} {% endif %}</td>
             </tr>
         {% endfor %}
         </tbody>

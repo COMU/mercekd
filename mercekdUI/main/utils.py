@@ -1,7 +1,7 @@
 from random import randint
 import random, time, string, datetime
 from django.template.defaulttags import now
-from mercekdUI.main.models import Lease, Lease_IP, Lease_Mac
+from mercekdUI.main.models import Lease, Lease_IP, Lease_Mac, Subnet
 
 def f7(seq):
     seen = set()
@@ -72,6 +72,7 @@ def listCount(lease_list=0):
 
 def addRandomLeases():
      ## Add random 100 leases to database ##
+
      for i in range(0,5):
          randomnumber = random.randint(0,5)
          if  randomnumber == 1:
@@ -88,6 +89,7 @@ def addRandomLeases():
                  ends = randDate("2012-06-30 01:01:01", "2013-12-30 11:01:59", random.random()),
                  uid = randMAC(),
                  client = randName(),
+                 subnetAlias = "0",
                  )
          elif randomnumber == 2:
              Lease.objects.create(
@@ -102,6 +104,7 @@ def addRandomLeases():
                  ends = randDate("2012-06-30 01:01:01", "2013-12-30 11:01:59", random.random()),
                  uid = randMAC(),
                  client = randName(),
+                 subnetAlias = "0",
              )
          elif randomnumber == 3:
              Lease.objects.create(
@@ -116,8 +119,8 @@ def addRandomLeases():
                  ends = randDate("2012-06-30 01:01:01", "2013-12-30 11:01:59", random.random()),
                  uid = randMAC(),
                  client = randName(),
+                 subnetAlias = "0",
              )
-
          else:
              Lease.objects.create(
                  ip = Lease_IP.objects.create(
@@ -131,6 +134,7 @@ def addRandomLeases():
                  ends = randDate("2012-06-30 01:01:01", "2013-12-30 11:01:59", random.random()),
                  uid = randMAC(),
                  client = randName(),
+                 subnetAlias = "0",
              )
 
              ### Random function ends ###
