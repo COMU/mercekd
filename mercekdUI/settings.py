@@ -10,6 +10,7 @@ BASE_URL = 'http://127.0.0.1:8000'
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -115,6 +116,8 @@ MIDDLEWARE_CLASSES = (
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
+
 
 ROOT_URLCONF = 'mercekdUI.urls'
 

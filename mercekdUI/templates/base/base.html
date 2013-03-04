@@ -38,11 +38,25 @@
 </a>
 <a class="brand" href="#">  {% if page_title %}{{ page_title }}{% else %}No page title set.{% endif %}</a>
 <div class="nav-collapse collapse">
-<!-- <ul class="nav">
-<li class="active"><a href="#">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul> -->
+    <ul class="nav pull-right">
+        <li class="dropdown">
+            <div class="btn-group">
+                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                    {% trans "Language" %}
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                {% for lang in LANGUAGES %}
+                    <li>
+                        <a href="#" onclick="post_to_url('i18n/setlang/', {'language':'{{ lang.0 }}','csrfmiddlewaretoken': getCookie('csrftoken')});">{{ lang.1 }}</a>
+                    </li>
+                {% endfor %}
+                    </ul>
+            </div>
+
+            </ul>
+        </li>
+    </ul>
 </div><!--/.nav-collapse -->
 </div>
 </div>

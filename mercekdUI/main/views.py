@@ -3,7 +3,8 @@ from django.shortcuts import render_to_response
 from django.db.models import Q
 from django.template.context import RequestContext
 from django.core.urlresolvers import reverse
-from django.utils.translation import ugettext as _
+from django.utils import translation
+from django.utils.translation import ugettext_lazy as _
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -14,7 +15,7 @@ import ipcalc
 
 
 def home(request):
-
+        print request.LANGUAGE_CODE
         count = listCount()
         context = {
            'page_title': 'Homepage',
@@ -81,7 +82,7 @@ def listLeases(request, leases=0):
         }
 	return render_to_response("home/leases.html",
                             context_instance=RequestContext(request, context))
-    
+
 
 def options(request):
 
@@ -219,3 +220,21 @@ def IPv4addressmap(request):
         }
     return render_to_response("home/ipv4addressmap.html",
                               context_instance=RequestContext(request, context))
+
+
+def set_language(request):
+    next = request.REQUEST.get('next', None)
+    if not next:
+        next = request.META.get('HTTP_REFERER', None)
+    if not next:
+        next = '/'
+    response = http.HttpResponseRedirect(next)
+    if request.method == 'GET':
+        lang_code = request.GET.get('language', None)
+        if lang_code and check_for_language(lang_code):
+            if hasattr(request, 'session'):
+                request.session['django_language'] = lang_code
+            else:
+                response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang_code)
+            translation.activate(lang_code)
+    return response
