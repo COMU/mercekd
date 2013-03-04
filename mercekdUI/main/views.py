@@ -163,11 +163,44 @@ def postAlias(request):
     return HttpResponse(json.dumps(response_data), mimetype="application/json")
 
 def IPv4addressmap(request):
+    subnet = []
+    ipv4s = []
+    all_ipv4s = []
+    subnets = 0
+    if not request.method == "POST":
+      try:
+        subnets = Subnet.objects.all()
+      except:
+        pass
+    else:
+      try:
+          # bu kisim relational database islemleri istiyor ancak mongodb desteklemiyor bu yuzden buraya daha iyi bir cozum bulmalisin.
+          g_id = request.POST['ipv4_id']
+          s_select = Subnet.objects.get(id=str(g_id))
+          ipv4 = s_select.ip
+          mask = s_select.mask
+          alias = s_select.alias
+          subnet.append(ipv4)
+          subnet.append(mask)
+          subnet.append(alias)
+          for i in ipcalc.Network(ipv4 + '/' + mask):
+              all_ipv4s.append(i)
+              if Lease_IP.objects.filter(v4=i):
+                #ipv4s.append(str(i).split(".")[3])
+                ipv4s.append(str(i))
+          subnet.append(len(all_ipv4s)-len(ipv4s))
+          subnet.append(len(all_ipv4s))
+          subnet.append(len(ipv4s))
+      except:
+          pass
 
     count = listCount()
     context = {
-        'page_title': 'Homepage',
+        'page_title': 'IPv4 Address Map',
         'count': count,
+        'subnets': subnets,
+        'subnet': subnet,
+        'ipv4s': ipv4s,
         }
     return render_to_response("home/ipv4addressmap.html",
                               context_instance=RequestContext(request, context))
