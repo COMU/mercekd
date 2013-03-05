@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-04 01:50-0600\n"
+"POT-Creation-Date: 2013-03-05 12:53-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
-#: settings.py:52
+#: settings.py:53
 msgid "Turkish"
 msgstr "Türkçe"
 
-#: settings.py:53
+#: settings.py:54
 msgid "English"
 msgstr "İngilizce"
 
@@ -30,8 +30,17 @@ msgstr "İngilizce"
 msgid "No page title set."
 msgstr "Sayfa ismi atanmamış"
 
-#: templates/base/base.html:110
+#: templates/base/base.html:45
+msgid "Language"
+msgstr ""
+
+#: templates/base/base.html:124
 msgid "Cannot be deleted"
+msgstr "Silinemiyor"
+
+#: templates/base/base.html:135
+#, fuzzy
+msgid "Cannot be refreshed"
 msgstr "Silinemiyor"
 
 #: templates/base/layout1.html:7
@@ -58,6 +67,51 @@ msgstr "Ip Adresi Haritası"
 msgid "Options"
 msgstr "Ayarlar"
 
+#: templates/home/getleases.html:8 templates/home/leases.html:19
+msgid "UID"
+msgstr "UID"
+
+#: templates/home/getleases.html:9 templates/home/leases.html:20
+msgid "IP"
+msgstr "IP"
+
+#: templates/home/getleases.html:10 templates/home/leases.html:21
+msgid "Mac"
+msgstr "Mac"
+
+#: templates/home/getleases.html:11 templates/home/leases.html:22
+msgid "Client-Name"
+msgstr "İstemci-Adı"
+
+#: templates/home/getleases.html:12 templates/home/leases.html:23
+msgid "Starts"
+msgstr "Başlangıç"
+
+#: templates/home/getleases.html:13 templates/home/leases.html:24
+msgid "Ends"
+msgstr "Bitiş"
+
+#: templates/home/getleases.html:14 templates/home/leases.html:25
+msgid "Subnet"
+msgstr "Altağ"
+
+#: templates/home/getleases.html:25 templates/home/getleases.html.py:26
+#: templates/home/leases.html:36 templates/home/leases.html.py:37
+msgid "Show History</a>"
+msgstr "Geçmişi Göster</a>"
+
+#: templates/home/getleases.html:40 templates/home/leases.html:51
+msgid "previous"
+msgstr "önceki"
+
+#: templates/home/getleases.html:44 templates/home/leases.html:55
+msgid "Page"
+msgstr "Sayfa"
+
+#: templates/home/getleases.html:48 templates/home/leases.html:59
+msgid "next"
+msgstr "sonraki"
+
 #: templates/home/ipv4addressmap.html:10
 msgid "Please choose a subnet to show map"
 msgstr "Haritayı görmek için lütfen bir altağ seçin"
@@ -67,52 +121,12 @@ msgid "Declared Addresses"
 msgstr "Dolu Adresler"
 
 #: templates/home/leases.html:9
+msgid "Refresh"
+msgstr "Yenile"
+
+#: templates/home/leases.html:12
 msgid "Filter"
 msgstr "Filtrele"
-
-#: templates/home/leases.html:17
-msgid "UID"
-msgstr "UID"
-
-#: templates/home/leases.html:18
-msgid "IP"
-msgstr "IP"
-
-#: templates/home/leases.html:19
-msgid "Mac"
-msgstr "Mac"
-
-#: templates/home/leases.html:20
-msgid "Client-Name"
-msgstr "İstemci-Adı"
-
-#: templates/home/leases.html:21
-msgid "Starts"
-msgstr "Başlangıç"
-
-#: templates/home/leases.html:22
-msgid "Ends"
-msgstr "Bitiş"
-
-#: templates/home/leases.html:23
-msgid "Subnet"
-msgstr "Altağ"
-
-#: templates/home/leases.html:34 templates/home/leases.html.py:35
-msgid "Show History</a>"
-msgstr "Geçmişi Göster</a>"
-
-#: templates/home/leases.html:49
-msgid "previous"
-msgstr "önceki"
-
-#: templates/home/leases.html:53
-msgid "Page"
-msgstr "Sayfa"
-
-#: templates/home/leases.html:57
-msgid "next"
-msgstr "sonraki"
 
 #: templates/home/options.html:9
 msgid "Leases File Path"

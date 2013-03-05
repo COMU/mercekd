@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-04 01:50-0600\n"
+"POT-Creation-Date: 2013-03-05 12:53-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: settings.py:52
+#: settings.py:53
 msgid "Turkish"
 msgstr ""
 
-#: settings.py:53
+#: settings.py:54
 msgid "English"
 msgstr ""
 
@@ -29,8 +29,16 @@ msgstr ""
 msgid "No page title set."
 msgstr ""
 
-#: templates/base/base.html:110
+#: templates/base/base.html:45
+msgid "Language"
+msgstr ""
+
+#: templates/base/base.html:124
 msgid "Cannot be deleted"
+msgstr ""
+
+#: templates/base/base.html:135
+msgid "Cannot be refreshed"
 msgstr ""
 
 #: templates/base/layout1.html:7
@@ -57,6 +65,51 @@ msgstr ""
 msgid "Options"
 msgstr ""
 
+#: templates/home/getleases.html:8 templates/home/leases.html:19
+msgid "UID"
+msgstr ""
+
+#: templates/home/getleases.html:9 templates/home/leases.html:20
+msgid "IP"
+msgstr ""
+
+#: templates/home/getleases.html:10 templates/home/leases.html:21
+msgid "Mac"
+msgstr ""
+
+#: templates/home/getleases.html:11 templates/home/leases.html:22
+msgid "Client-Name"
+msgstr ""
+
+#: templates/home/getleases.html:12 templates/home/leases.html:23
+msgid "Starts"
+msgstr ""
+
+#: templates/home/getleases.html:13 templates/home/leases.html:24
+msgid "Ends"
+msgstr ""
+
+#: templates/home/getleases.html:14 templates/home/leases.html:25
+msgid "Subnet"
+msgstr ""
+
+#: templates/home/getleases.html:25 templates/home/getleases.html.py:26
+#: templates/home/leases.html:36 templates/home/leases.html.py:37
+msgid "Show History</a>"
+msgstr ""
+
+#: templates/home/getleases.html:40 templates/home/leases.html:51
+msgid "previous"
+msgstr ""
+
+#: templates/home/getleases.html:44 templates/home/leases.html:55
+msgid "Page"
+msgstr ""
+
+#: templates/home/getleases.html:48 templates/home/leases.html:59
+msgid "next"
+msgstr ""
+
 #: templates/home/ipv4addressmap.html:10
 msgid "Please choose a subnet to show map"
 msgstr ""
@@ -66,51 +119,11 @@ msgid "Declared Addresses"
 msgstr ""
 
 #: templates/home/leases.html:9
+msgid "Refresh"
+msgstr ""
+
+#: templates/home/leases.html:12
 msgid "Filter"
-msgstr ""
-
-#: templates/home/leases.html:17
-msgid "UID"
-msgstr ""
-
-#: templates/home/leases.html:18
-msgid "IP"
-msgstr ""
-
-#: templates/home/leases.html:19
-msgid "Mac"
-msgstr ""
-
-#: templates/home/leases.html:20
-msgid "Client-Name"
-msgstr ""
-
-#: templates/home/leases.html:21
-msgid "Starts"
-msgstr ""
-
-#: templates/home/leases.html:22
-msgid "Ends"
-msgstr ""
-
-#: templates/home/leases.html:23
-msgid "Subnet"
-msgstr ""
-
-#: templates/home/leases.html:34 templates/home/leases.html.py:35
-msgid "Show History</a>"
-msgstr ""
-
-#: templates/home/leases.html:49
-msgid "previous"
-msgstr ""
-
-#: templates/home/leases.html:53
-msgid "Page"
-msgstr ""
-
-#: templates/home/leases.html:57
-msgid "next"
 msgstr ""
 
 #: templates/home/options.html:9
