@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     
     url(r'^$', 'mercekdUI.main.views.home', name='homePage'),
     url(r'^listLeases/(?P<leases>\w+)$', 'mercekdUI.main.views.listLeases', name='listLeases'),
+    url(r'^getLeases/(?P<leases>\w+)$', 'mercekdUI.main.views.getLeases', name='getLeases'),
     url(r'^options/$', 'mercekdUI.main.views.options', name='options'),
     url(r'^postAlias/$', 'mercekdUI.main.views.postAlias', name='postAlias'),
     url(r'^IPv4map/$', 'mercekdUI.main.views.IPv4addressmap', name='IPv4map'),

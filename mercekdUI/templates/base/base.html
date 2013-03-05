@@ -125,6 +125,21 @@
             }
         })
         }
+
+        function refreshLeases(url) {
+            $.ajax({
+                success: function(){
+                    $('#editable').fadeOut('slow').load(url).fadeIn("slow");
+                },
+                error:function(){
+                    alert("{% trans "Cannot be refreshed" %}");
+                }
+
+            })
+        }
+
+
+
         function post_to_url(path, params, method) {
             method = method || "post";
 

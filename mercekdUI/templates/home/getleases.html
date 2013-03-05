@@ -1,15 +1,6 @@
-{% extends "base/layout1.html" %}
 {% load i18n %}
 {% block left %}
 
-    <div align=right>
-        <form class="form-search" name="search_form" id="search_form" method="POST" action="/listLeases/all">
-            <a href=# onclick="refreshLeases('{% url getLeases leases=current_leases %}')"><i class="icon-refresh"></i></a>
-        {% csrf_token %}
-        <input id="q" name="q" type="text" class="input-medium search-query">
-        <button name="searchSubmit" type="submit" class="btn">{% trans "Filter" %}</button>
-    </form>
-</div>
 <div id="editable">
     <table class="table table-hover">
         <thead>
@@ -58,5 +49,13 @@
         {% endif %}
     </span>
 </div>
+
+    <script>
+
+        $('#editable a').editable({
+            url: '/postAlias/',
+        });
+
+    </script>
 
 {% endblock %}

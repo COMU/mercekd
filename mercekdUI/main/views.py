@@ -25,7 +25,6 @@ def home(request):
                             context_instance=RequestContext(request, context))
 
 def listLeases(request, leases=0):
-        addRandomLeases()
         if request.POST:
             q = request.POST.get('q')
             if q is not None:
@@ -74,6 +73,7 @@ def listLeases(request, leases=0):
         result = handleAliases(leases_list)
 
         context = {
+           'current_leases': leases,
            'page_title': 'Lease List',
            'leases_list': leases_list,
            'result': result,
@@ -221,20 +221,60 @@ def IPv4addressmap(request):
     return render_to_response("home/ipv4addressmap.html",
                               context_instance=RequestContext(request, context))
 
+def getLeases(request, leases=0):
+    if request.POST:
+        q = request.POST.get('q')
+        if q is not None:
+            lease_ip_list = Lease_IP.objects.filter(
+                Q(v4__contains = q) |
+                Q(ip_name__contains = q))
 
-def set_language(request):
-    next = request.REQUEST.get('next', None)
-    if not next:
-        next = request.META.get('HTTP_REFERER', None)
-    if not next:
-        next = '/'
-    response = http.HttpResponseRedirect(next)
-    if request.method == 'GET':
-        lang_code = request.GET.get('language', None)
-        if lang_code and check_for_language(lang_code):
-            if hasattr(request, 'session'):
-                request.session['django_language'] = lang_code
-            else:
-                response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang_code)
-            translation.activate(lang_code)
-    return response
+            lease_mac_list = Lease_Mac.objects.filter(
+                Q(mac__contains = q) |
+                Q(mac_name__contains = q))
+
+            print lease_mac_list
+
+            leases_list = Lease.objects.get_empty_query_set()
+            if len(lease_ip_list):
+                for i in lease_ip_list:
+                    leases_list = leases_list | Lease.objects.filter(ip=i.id)
+            if len(lease_mac_list):
+                for i in lease_mac_list:
+                    leases_list = leases_list | Lease.objects.filter(mac=i.id)
+                    #else:
+                    #    leases_list = Lease.objects.all()
+
+    else:
+        leases_list = Lease.objects.all()
+
+    if leases == 'active':
+        leases_list = parseLease(leases_list,'active')
+    elif leases == 'expired':
+        leases_list = parseLease(leases_list,0)
+    else:
+        leases_list = leases_list
+
+    paginator = Paginator(leases_list, 50)
+    if request.GET.get('page'):
+        page = request.GET.get('page')
+    else:
+        page = 1
+    try:
+        leases_list = paginator.page(page)
+    except PageNotAnInteger:
+        leases_list = paginator.page(1)
+    except EmptyPage:
+        leases_list = paginator.page(paginator.num_pages)
+
+    result = handleAliases(leases_list)
+
+    context = {
+        'page_title': 'Lease List',
+        'leases_list': leases_list,
+        'result': result,
+        'count': listCount(),
+        'now': datetime.datetime.today()
+    }
+    return render_to_response("home/getleases.html",
+                              context_instance=RequestContext(request, context))
