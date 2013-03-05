@@ -1,4 +1,5 @@
-# mercekD ISC DHCP Log Analyzer
+![mercekd](http://i.imgur.com/IKDeu0I.png)
+### ISC DHCP Log Analyzer
 
 ![WTFPL](http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-1.png)
 
