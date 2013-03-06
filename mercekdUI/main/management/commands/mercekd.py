@@ -8,16 +8,20 @@ from mercekdUI.main.management.commands.sql.sql import SqlManager
 from django.core.management.base import BaseCommand, CommandError
 from datetime import datetime
 import tailer
+from mercekdUI.main.models import LeasesFilePath
 
 
 class Command(BaseCommand):
 
   def handle(self, *args, **options):
   #tail
-      print "test"
+      leases_path = LeasesFilePath.objects.all()
+      if leases_path:
+          leases_path = path_list[path_list.count()-1].path
+      else:
+          leases_path = "/var/lib/dhcp.leases"
 
       if 1==1:
-          print "test2"
           #logging
           log=logging.getLogger("mercekd")
           log.setLevel(logging.DEBUG)
@@ -29,17 +33,15 @@ class Command(BaseCommand):
           #options
           program='mercekd'
           parser = OptionParser(usage='usage: %prog [options] filepath')
-          parser.add_option("-p", "--path",dest="path",help="the path of DHCP lease file",metavar="path")
+          #parser.add_option("-p", "--path",dest="path",help="the path of DHCP lease file",metavar="path")
           parser.add_option("-v","--verbose",dest="verbose",action='store_true',default=False)
           (option,args)=parser.parse_args()
 
 
-          file_name=None
-          if option.path:
-              file_name=option.path
+          file_name=leases_path
           if option.verbose:
               verbose=True
-          if not option.verbose and not option.path:
+          if not option.verbose:
               parser.print_help()
               sys.exit(1)
 
