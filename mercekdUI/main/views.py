@@ -13,7 +13,6 @@ from mercekdUI.main.utils import *
 import random, datetime, json
 import ipcalc
 
-
 def home(request):
         print request.LANGUAGE_CODE
         count = listCount()
