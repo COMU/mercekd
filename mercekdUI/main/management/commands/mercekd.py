@@ -41,7 +41,6 @@ class Command(BaseCommand):
           leases_path = "/var/lib/dhcp.leases"
 
       log.info(_(u"mercekdaemon started. please type -h for help "))
-      leases_path = "/home/faruk/leases.txt"
       try:
            if leases_path:
                  result=dict()
