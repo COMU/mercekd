@@ -10,11 +10,13 @@ class Command(BaseCommand):
       import time
       import sys
       import tailer
+      import os
       from datetime import datetime
-      from mercekdUI.main.models import LeasesFilePath, Lease, Lease_IP, Lease_Mac
-
+      from mercekdUI.main.models import LeasesFilePath, Lease, Lease_IP, Lease_Mac, Status
+      current_pid = str(os.getpid())
+      current_status = Status.objects.create(status=True,
+                                       pid=current_pid)
       verbosity = int(options.get('verbosity'))
-
       #logging
       log=logging.getLogger("mercekd")
       log.setLevel(logging.DEBUG)
@@ -39,7 +41,7 @@ class Command(BaseCommand):
           leases_path = "/var/lib/dhcp.leases"
 
       log.info(_(u"mercekdaemon started. please type -h for help "))
-
+      leases_path = "/home/faruk/leases.txt"
       try:
            if leases_path:
                  result=dict()
@@ -141,13 +143,12 @@ class Command(BaseCommand):
 
       except KeyboardInterrupt:
         log.info(_(u"Goodbye :-)"))
+        current_status.status = False
+        current_status.save()
         sys.exit(1)
 
       except:
           log.error(_(u"Unexpected error: ") + "%s" % (sys.exc_info()[0]))
+          current_status.status = False
+          current_status.save()
           sys.exit(1)
-
-
-
-
-

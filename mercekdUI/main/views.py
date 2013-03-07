@@ -2,16 +2,15 @@
 from django.shortcuts import render_to_response
 from django.db.models import Q
 from django.template.context import RequestContext
-from django.core.urlresolvers import reverse
-from django.utils import translation
-from django.utils.translation import ugettext_lazy as _
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from mercekdUI.main.models import Lease, Lease_IP, Lease_Mac, LeasesFilePath, Subnet
+from mercekdUI.main.models import Lease, Lease_IP, Lease_Mac, LeasesFilePath, Subnet, Status
 from mercekdUI.main.utils import *
 import random, datetime, json
 import ipcalc
+import subprocess
+import os
 
 def home(request):
         print request.LANGUAGE_CODE
@@ -114,17 +113,27 @@ def options(request):
                         i.subnetAlias = p.alias
                         i.save()
                         print i.subnet.alias
-                    print "okayoldu"
           except:
            pass
+          try:
+            last_status =  list(Status.objects.all())[-1]
+            pid = int(last_status.pid)
+            set_status = request.POST['set_status']
+            print "ok"
+            if set_status=="1":
+                process = subprocess.Popen(['./bin/django', 'mercekd'])
+            else:
+                os.kill(pid, 9)
+                last_status.status=False
+                last_status.save()
 
-
+          except:
+              pass
         if request.method == "GET":
             try:
                d_id = request.GET['id']
                d_select = Subnet.objects.get(id=d_id)
                d_select.delete()
-               print "silindi"
             except:
                pass
  
@@ -139,9 +148,8 @@ def options(request):
         except:
           pass
 
-
-
 	context = {
+           'status': list(Status.objects.all())[-1].status ,
            'page_title': 'Options',
            'path_file' : path_list,
            'count': listCount(),

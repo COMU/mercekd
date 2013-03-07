@@ -24,5 +24,10 @@ class Subnet(models.Model):
      ip = models.TextField(null=True)
      mask = models.TextField(null=True)
      alias = models.TextField(null=True)
+
+class Status(models.Model):
+     status = models.BooleanField()
+     pid = models.TextField()
+
      
 # Create your models here.

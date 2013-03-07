@@ -139,6 +139,30 @@
         }
 
 
+        function setDaemon(post_value,csrf_protect) {
+            $.ajax({
+                type: "POST",
+                url: "/options/",
+                data: "set_status=" + post_value + "&csrfmiddlewaretoken=" + csrf_protect,
+                success: function(){
+
+                    if (post_value==1)
+                    {
+                        $('div#start').hide();
+                        $('div#stop').show();
+                    }
+                    else
+                    {
+                        $('div#stop').hide();
+                        $('div#start').show();
+                    }
+
+                },
+                error:function(){
+                    alert("{% trans "Cannot be started" %}");
+                }
+            })
+        }
 
         function post_to_url(path, params, method) {
             method = method || "post";

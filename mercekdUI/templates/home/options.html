@@ -3,8 +3,16 @@
 
 
 {% block left %}
+    <legend>{% trans "MercekDaemon Status" %}</legend>
 
-<form method="POST">
+        <div id="stop"     {% if not status %}style="display:none;"{% endif %}>
+            <a href="#" onclick="setDaemon('0', getCookie('csrftoken'));"><button class="btn btn-large btn-block btn-primary" type="button">{% trans "mercekdaemon is running. click here to stop it." %}</button></a>
+        </div>
+        <div id="start" {% if status %}style="display:none;"{% endif %}>
+            <a href="#" onclick="setDaemon('1', getCookie('csrftoken'));"><button class="btn btn-large btn-block btn btn-danger" type="button">{% trans "mercekdaemon is not running. click here to start it." %}</button></a>
+        </div>
+
+    <form method="POST">
  <fieldset>
     <legend>{% trans "Leases File Path" %}</legend>
     <input type="text" name="file_path" placeholder="Eg: /var/lib/dhcp.leases">
@@ -24,7 +32,6 @@
  <button type="submit" class="btn btn-primary">{% trans "Add" %}</button>
 </form>
 <div id="editable">
-    <div id="status"></div>
     <table id="subnets" class="table table-condensed table-bordered">
     <h4>{% trans "Subnets" %}</h4>
         {% for subnet in result %}       
