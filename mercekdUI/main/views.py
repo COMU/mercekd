@@ -119,7 +119,6 @@ def options(request):
             last_status =  list(Status.objects.all())[-1]
             pid = int(last_status.pid)
             set_status = request.POST['set_status']
-            print "ok"
             if set_status=="1":
                 process = subprocess.Popen(['./bin/django', 'mercekd'])
             else:
@@ -133,6 +132,10 @@ def options(request):
             try:
                d_id = request.GET['id']
                d_select = Subnet.objects.get(id=d_id)
+               l_all = Lease.objects.filter(subnetAlias=d_select.alias)
+               for l in l_all:
+                   l.subnetAlias = "0"
+                   l.save()
                d_select.delete()
             except:
                pass
