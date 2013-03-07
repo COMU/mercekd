@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-05 12:53-0600\n"
+"POT-Creation-Date: 2013-03-07 03:05-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,6 +25,23 @@ msgstr ""
 msgid "English"
 msgstr ""
 
+#: main/management/commands/mercekd.py:43
+msgid "mercekdaemon started. please type -h for help "
+msgstr ""
+
+#: main/management/commands/mercekd.py:60
+#: main/management/commands/mercekd.py:151
+msgid "Unexpected error: "
+msgstr ""
+
+#: main/management/commands/mercekd.py:97
+msgid "Lease that above cannot add to database. Error: "
+msgstr ""
+
+#: main/management/commands/mercekd.py:145
+msgid "Goodbye :-)"
+msgstr ""
+
 #: templates/base/base.html:12
 msgid "No page title set."
 msgstr ""
@@ -39,6 +56,10 @@ msgstr ""
 
 #: templates/base/base.html:135
 msgid "Cannot be refreshed"
+msgstr ""
+
+#: templates/base/base.html:162
+msgid "Cannot be started"
 msgstr ""
 
 #: templates/base/layout1.html:7
@@ -126,34 +147,46 @@ msgstr ""
 msgid "Filter"
 msgstr ""
 
+#: templates/home/options.html:6
+msgid "MercekDaemon Status"
+msgstr ""
+
 #: templates/home/options.html:9
+msgid "mercekdaemon is running. click here to stop it."
+msgstr ""
+
+#: templates/home/options.html:12
+msgid "mercekdaemon is not running. click here to start it."
+msgstr ""
+
+#: templates/home/options.html:17
 msgid "Leases File Path"
 msgstr ""
 
-#: templates/home/options.html:12
+#: templates/home/options.html:20
 msgid "Current Path:"
 msgstr ""
 
-#: templates/home/options.html:12
+#: templates/home/options.html:20
 msgid "Leave empty for default. Default: <b>/var/lib/dhcp.leases</b>"
 msgstr ""
 
-#: templates/home/options.html:14
+#: templates/home/options.html:22
 msgid "Submit"
 msgstr ""
 
-#: templates/home/options.html:18
+#: templates/home/options.html:26
 msgid "Add Subnet"
 msgstr ""
 
-#: templates/home/options.html:24
+#: templates/home/options.html:32
 msgid "Add"
 msgstr ""
 
-#: templates/home/options.html:29
+#: templates/home/options.html:36
 msgid "Subnets"
 msgstr ""
 
-#: templates/home/options.html:32
+#: templates/home/options.html:39
 msgid "Delete</a>"
 msgstr ""

@@ -5,4 +5,5 @@
     $ ./bin/buildout
     $ ./bin/django runserver
     $ ./bin/start_master.sh
-    $ python mercekd/daemon.py
+
+Don't forget to start mercekdaemon from options page.

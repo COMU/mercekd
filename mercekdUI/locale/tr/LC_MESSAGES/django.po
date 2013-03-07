@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-05 12:53-0600\n"
+"POT-Creation-Date: 2013-03-07 03:05-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,13 +26,30 @@ msgstr "Türkçe"
 msgid "English"
 msgstr "İngilizce"
 
+#: main/management/commands/mercekd.py:43
+msgid "mercekdaemon started. please type -h for help "
+msgstr "mercekdaemon çalışıyor. lütfen yardım için -h komutunu kullanın."
+
+#: main/management/commands/mercekd.py:60
+#: main/management/commands/mercekd.py:151
+msgid "Unexpected error: "
+msgstr "Beklenmeyen bir hata oluştu: "
+
+#: main/management/commands/mercekd.py:97
+msgid "Lease that above cannot add to database. Error: "
+msgstr "Üstteki lease veritabanına eklenemedi. Hata: "
+
+#: main/management/commands/mercekd.py:145
+msgid "Goodbye :-)"
+msgstr "Hoşcakal :-)"
+
 #: templates/base/base.html:12
 msgid "No page title set."
 msgstr "Sayfa ismi atanmamış"
 
 #: templates/base/base.html:45
 msgid "Language"
-msgstr ""
+msgstr "Dil"
 
 #: templates/base/base.html:124
 msgid "Cannot be deleted"
@@ -41,7 +58,12 @@ msgstr "Silinemiyor"
 #: templates/base/base.html:135
 #, fuzzy
 msgid "Cannot be refreshed"
-msgstr "Silinemiyor"
+msgstr "Yenilenemiyor"
+
+#: templates/base/base.html:162
+#, fuzzy
+msgid "Cannot be started"
+msgstr "Başlatılamıyor"
 
 #: templates/base/layout1.html:7
 msgid "Homepage"
@@ -61,11 +83,11 @@ msgstr "Gelişmiş Arama"
 
 #: templates/base/layout1.html:11
 msgid "IP Address Blocks"
-msgstr "Ip Adresi Haritası"
+msgstr "Ip Adresi Blokları"
 
 #: templates/base/layout1.html:12
 msgid "Options"
-msgstr "Ayarlar"
+msgstr "Seçenekler"
 
 #: templates/home/getleases.html:8 templates/home/leases.html:19
 msgid "UID"
@@ -128,34 +150,46 @@ msgstr "Yenile"
 msgid "Filter"
 msgstr "Filtrele"
 
+#: templates/home/options.html:6
+msgid "MercekDaemon Status"
+msgstr "MercekDaemon Durumu"
+
 #: templates/home/options.html:9
+msgid "mercekdaemon is running. click here to stop it."
+msgstr "mercekdaemon çalışıyor! durdurmak için tıklayın."
+
+#: templates/home/options.html:12
+msgid "mercekdaemon is not running. click here to start it."
+msgstr "mercekdaemon çalışmıyor! çalıştırmak için tıklayın."
+
+#: templates/home/options.html:17
 msgid "Leases File Path"
 msgstr "Lease dosya yolu"
 
-#: templates/home/options.html:12
+#: templates/home/options.html:20
 msgid "Current Path:"
 msgstr "Şimdiki Adres:"
 
-#: templates/home/options.html:12
+#: templates/home/options.html:20
 msgid "Leave empty for default. Default: <b>/var/lib/dhcp.leases</b>"
 msgstr "Varsayılan için boş bırakın. Varsayılan: <b>/var/lib/dhcp.leases</b>"
 
-#: templates/home/options.html:14
+#: templates/home/options.html:22
 msgid "Submit"
 msgstr "Gönder"
 
-#: templates/home/options.html:18
+#: templates/home/options.html:26
 msgid "Add Subnet"
 msgstr "Altağ ekle"
 
-#: templates/home/options.html:24
+#: templates/home/options.html:32
 msgid "Add"
 msgstr "Ekle"
 
-#: templates/home/options.html:29
+#: templates/home/options.html:36
 msgid "Subnets"
 msgstr "Altağlar"
 
-#: templates/home/options.html:32
+#: templates/home/options.html:39
 msgid "Delete</a>"
 msgstr "Sil</a>"
