@@ -48,7 +48,7 @@
                 <ul class="dropdown-menu">
                 {% for lang in LANGUAGES %}
                     <li>
-                        <a href="#" onclick="post_to_url('i18n/setlang/', {'language':'{{ lang.0 }}','csrfmiddlewaretoken': getCookie('csrftoken')});">{{ lang.1 }}</a>
+                        <a href="#" onclick="post_to_url(' {{ BASE_URL }}/i18n/setlang/', {'language':'{{ lang.0 }}','csrfmiddlewaretoken': getCookie('csrftoken')});">{{ lang.1 }}</a>
                     </li>
                 {% endfor %}
                     </ul>
