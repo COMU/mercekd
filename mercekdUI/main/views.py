@@ -196,6 +196,7 @@ def IPv4addressmap(request):
     if not request.method == "POST":
       try:
         subnets = Subnet.objects.all()
+
       except:
         pass
     else:

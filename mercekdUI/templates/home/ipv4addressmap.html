@@ -2,8 +2,7 @@
 {% load i18n %}
 {% block left %}
 
-{% if subnets != 0 %}
-
+{% if subnets.0 != None %}
 
         <div id="status"></div>
         <table id="subnets" class="table table-condensed table-bordered">
@@ -15,8 +14,8 @@
             {% endfor %}
         </table>
 
-
-{% else %}
+{% endif %}
+{% if subnet.0 != None %}
 
     <div class="hero-unit">
         <h1>{{ subnet.2 }}</h1>
