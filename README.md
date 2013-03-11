@@ -10,9 +10,13 @@ MercekDaemon is a free software tool for analysis of real-time ISC DHCP log data
     $ cd mercekd
     $ python bootstrap.py
     $ ./bin/buildout
+
+## STARTING MERCEKDAEMON
+
     $ ./bin/django runserver
     $ ./bin/start_master.sh
 
+Now you can access mercekd via web. [http://127.0.0.1:8000]
 That's it! Don't forget to start mercekdaemon from options page.
 
 ## LICENCE
