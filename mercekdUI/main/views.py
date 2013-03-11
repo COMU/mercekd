@@ -189,7 +189,6 @@ def postAlias(request):
     return HttpResponse(json.dumps(response_data), mimetype="application/json")
 
 def IPv4addressmap(request):
-    addRandomLeases()
     subnet = []
     ipv4s = []
     all_ipv4s = []
