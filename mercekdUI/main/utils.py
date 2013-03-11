@@ -60,9 +60,9 @@ def randName(size=randint(6,10), chars=string.ascii_uppercase):
 
 def parseLease(leases_list, status=0):
     if status=='active':
-     return Lease.objects.filter(ends__gt=datetime.datetime.today())
+     return leases_list.filter(ends__gt=datetime.datetime.today())
     else:
-     return Lease.objects.filter(ends__lte=datetime.datetime.today())
+     return leases_list.filter(ends__lte=datetime.datetime.today())
 
 def listCount(lease_list=0):
      count=[]

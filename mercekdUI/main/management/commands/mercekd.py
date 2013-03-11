@@ -36,7 +36,7 @@ class Command(BaseCommand):
       leases_path = LeasesFilePath.objects.all()
 
       if leases_path:
-          leases_path = path_list[path_list.count()-1].path
+          leases_path = leases_path[leases_path.count()-1].path
       else:
           leases_path = "/var/lib/dhcp.leases"
 

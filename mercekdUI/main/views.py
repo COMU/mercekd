@@ -189,6 +189,7 @@ def postAlias(request):
     return HttpResponse(json.dumps(response_data), mimetype="application/json")
 
 def IPv4addressmap(request):
+    addRandomLeases()
     subnet = []
     ipv4s = []
     all_ipv4s = []
@@ -214,9 +215,16 @@ def IPv4addressmap(request):
               all_ipv4s.append(i)
               if Lease_IP.objects.filter(v4=i):
                 #ipv4s.append(str(i).split(".")[3])
-                ipv4s.append(str(i))
+                lease_ips = Lease_IP.objects.filter(v4=i)
+                print lease_ips
+                for s_lease in lease_ips:
+                    active_leases = parseLease(Lease.objects.filter(ip=s_lease.id),"active")
+                    if active_leases:
+                        ipv4s.append(str(i))
+
           subnet.append(len(all_ipv4s)-len(ipv4s))
           subnet.append(len(all_ipv4s))
+          ipv4s = parseLease(ipv4s,'active')
           subnet.append(len(ipv4s))
       except:
           pass
