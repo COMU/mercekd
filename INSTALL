@@ -1,9 +1,12 @@
+## INSTALLATION
+
     $ sudo apt-get install git
     $ git clone git://github.com/COMU/mercekd.git
     $ cd mercekd
     $ python bootstrap.py
     $ ./bin/buildout
-    $ ./bin/django runserver
-    $ ./bin/start_master.sh
 
-Don't forget to start mercekdaemon from options page.
+## STARTING MERCEKDAEMON
+
+    $ ./bin/start_master.sh
+    $ ./bin/django runserver
