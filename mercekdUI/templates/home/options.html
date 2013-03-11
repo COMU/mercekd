@@ -3,15 +3,16 @@
 
 
 {% block left %}
+<fieldset>
     <legend>{% trans "MercekDaemon Status" %}</legend>
 
         <div id="stop"     {% if not status %}style="display:none;"{% endif %}>
-            <a href="#" onclick="setDaemon('0', getCookie('csrftoken'));"><button class="btn btn-large btn-block btn-primary" type="button">{% trans "mercekdaemon is running. click here to stop it." %}</button></a>
+            <button  onclick="setDaemon('0   ', getCookie('csrftoken'));" class="btn btn-large btn-block btn-primary" type="button">{% trans "mercekdaemon is running. click here to stop it." %}</button>
         </div>
         <div id="start" {% if status %}style="display:none;"{% endif %}>
-            <a href="#" onclick="setDaemon('1', getCookie('csrftoken'));"><button class="btn btn-large btn-block btn btn-danger" type="button">{% trans "mercekdaemon is not running. click here to start it." %}</button></a>
+            <button onclick="setDaemon('1', getCookie('csrftoken'));" class="btn btn-large btn-block btn btn-danger" type="button">{% trans "mercekdaemon is not running. click here to start it." %}</button>
         </div>
-
+</fieldset>
     <form method="POST">
  <fieldset>
     <legend>{% trans "Leases File Path" %}</legend>
@@ -32,9 +33,9 @@
  <button type="submit" class="btn btn-primary">{% trans "Add" %}</button>
 </form>
 <div id="editable">
-    <table id="subnets" class="table table-condensed table-bordered">
     <h4>{% trans "Subnets" %}</h4>
-        {% for subnet in result %}       
+    <table id="subnets" class="table table-condensed table-bordered">
+        {% for subnet in result %}
        <tr id="id_{{ subnet.id }}">
        <td><a href="#"  id="{{ subnet.id }}" data-type="text" data-name="ip" data-pk="{{ subnet.id }}" data-title="{{ subnet.alias }} - <a href='#' onClick=linkDelete('{{ subnet.id }}'); >{% trans 'Delete</a>' %}" >{{ subnet.ip }}</a></td>
          <td>{{ subnet.mask }}</td>

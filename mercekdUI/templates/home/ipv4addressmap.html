@@ -5,11 +5,11 @@
 {% if subnets.0 != None %}
 
         <div id="status"></div>
+        <h4>{% trans "Please choose a subnet to show map" %}</h4>
         <table id="subnets" class="table table-condensed table-bordered">
-            <h4>{% trans "Please choose a subnet to show map" %}</h4>
             {% for subnet in subnets %}
                 <tr id="id_{{ subnet.id }}">
-                    <td><h5><a href="#" onclick="post_to_url('{% url IPv4map %}', {'ipv4_id':'{{ subnet.id }}','csrfmiddlewaretoken': getCookie('csrftoken')});" >{{ subnet.ip }}</a></b> / {{ subnet.mask }} / {{ subnet.alias }} </td>
+                    <td><h5><a href="#" onclick="post_to_url('{% url IPv4map %}', {'ipv4_id':'{{ subnet.id }}','csrfmiddlewaretoken': getCookie('csrftoken')});" >{{ subnet.ip }}</a> / {{ subnet.mask }} / {{ subnet.alias }}</h5></td>
                 </tr>
             {% endfor %}
         </table>
@@ -28,11 +28,13 @@
     {% if ipv4s %}
         <h4>{% trans "Declared Addresses" %}</h4>
     {% endif %}
+    <table id="subnets" class="table table-condensed table-bordered">
     {% for ip in ipv4s %}
-        <tr id="id_{{ ip }}">
-            <td><h5><a href="#" onclick="post_to_url('{% url listLeases leases="all" %}', {'q':'{{ ip }}','csrfmiddlewaretoken': getCookie('csrftoken')});" >{{ ip }}</a></b> </td>
+        <tr>
+            <td><h5><a href="#" onclick="post_to_url('{% url listLeases leases="all" %}', {'q':'{{ ip }}','csrfmiddlewaretoken': getCookie('csrftoken')});" >{{ ip }}</a></h5> </td>
         </tr>
     {% endfor %}
+    </table>
 {% endif %}
 
 
